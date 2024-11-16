@@ -1,0 +1,33 @@
+.footer {
+  background-color: rgb(0, 74, 128);
+  width: 100%;
+  color: var(--background);
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 11;
+}
+
+.img {
+  padding: 5px;
+  border-radius: 5px;
+  width: 100px;
+  height: auto;
+}
+
+.text {
+  margin-top: 0.626rem;
+  font-size: 0.9rem;
+}
+
+/*Responsive*/
+@media screen and (max-width: 768px) {
+  .footer {
+    margin: 0 0%;
+  }
+
+  .text {
+    font-size: 0.8rem;
+  }
+}

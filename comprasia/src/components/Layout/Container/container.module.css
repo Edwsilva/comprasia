@@ -1,0 +1,19 @@
+/* .container {
+  max-width: 93.375rem; 
+  margin: 0 auto;
+  padding: 10rem;
+  background-color: rgb(0, 255, 60);
+  flex: 1;
+  width: 100%;
+} */
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-rows: 3.75rem 1fr 3.75rem; /* Altura do header e footer */
+  grid-template-columns: 13.75rem 1fr; /* Largura do sidebar e conteúdo principal */
+  height: 100vh; /* Ocupa toda a altura da tela */
+}

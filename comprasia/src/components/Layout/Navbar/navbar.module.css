@@ -1,0 +1,68 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 10px 20px;
+  color: white;
+  position: relative;
+}
+
+.hamburger {
+  display: none; /* Esconde o botão em telas maiores */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.navItem {
+  margin-left: 20px;
+}
+
+.navItem a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navItem a:hover {
+  text-decoration: underline;
+}
+
+/* Exibe o botão de hambúrguer em telas menores */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Exibe o botão de hambúrguer em telas menores */
+  }
+
+  .navList {
+    display: none; /* Esconde o menu inicialmente */
+    flex-direction: column;
+    position: absolute;
+    top: 50px; /* Alinha abaixo do botão */
+    left: 0;
+    right: 0;
+    background-color: #333;
+    padding: 10px;
+    border-top: 1px solid #444;
+  }
+
+  .navList.show {
+    display: flex; /* Exibe o menu quando o botão de hambúrguer é clicado */
+    background-color: blue;
+  }
+
+  .navItem {
+    margin: 10px 0;
+  }
+}

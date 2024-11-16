@@ -1,0 +1,186 @@
+.main {
+  height: 100%;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 100%;
+  overflow-x: auto; /* Permite rolagem horizontal quando necessário */
+  margin: 0 auto;
+}
+
+.alert {
+  background-color: #fef3c7;
+  color: #92400e;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.button {
+  background: transparent;
+  border: none;
+  color: #2563eb;
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  overflow-x: auto; /* Permite rolagem horizontal */
+  min-width: 100%; /* Garante que a grid ocupe o espaço necessário */
+}
+
+.gridHeader {
+  display: contents;
+  font-weight: bold;
+  background-color: #f3f4f6;
+  padding: 1rem;
+  text-align: left;
+}
+
+.gridHeader span {
+  padding: 0.5rem;
+}
+
+.gridItem {
+  display: contents;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.gridItem span {
+  padding: 0.5rem;
+  display: block;
+}
+
+.status {
+  display: inline-flex; /* Torna o span um contêiner flexível */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  color: white;
+  text-transform: capitalize;
+  white-space: nowrap; /* Evita quebra de linha */
+  overflow-x: auto; /* Permite rolagem horizontal, se necessário */
+}
+
+.status-open {
+  background-color: #3b82f6;
+}
+
+.status-paid {
+  background-color: #10b981;
+}
+
+.status-void {
+  background-color: #71717a;
+}
+
+.status-uncollectible {
+  background-color: #ef4444;
+}
+
+.link {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.value {
+  font-weight: bold;
+}
+
+/* Media Queries para Responsividade */
+
+@media (max-width: 1200px) {
+  .grid {
+    /* grid-template-columns: repeat(4, 1fr); */
+    overflow-x: auto; /* Permite rolagem horizontal */
+  }
+}
+
+@media (max-width: 992px) {
+  .grid {
+    overflow-x: auto; /* Permite rolagem horizontal */
+    min-width: 900px;
+
+    /* grid-template-columns: repeat(3, 1fr); */
+  }
+  .status {
+    display: inline-flex; /* Torna o span um contêiner flexível */
+    white-space: nowrap; /* Evita quebra de linha */
+    overflow-x: auto; /* Permite rolagem horizontal, se necessário */
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    /* grid-template-columns: repeat(2, 1fr); */
+    min-width: 700px; /* Fornece a largura mínima necessária para o conteúdo */
+    overflow-x: auto; /* Permite rolagem horizontal */
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .alert {
+    font-size: 0.75rem;
+  }
+
+  .gridItem span {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid {
+    overflow: auto;
+    min-width: 500px; /* Fornece uma largura mínima para a grid */
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .alert {
+    font-size: 0.75rem;
+  }
+
+  .button {
+    font-size: 0.75rem;
+  }
+
+  .gridHeader span,
+  .gridItem span {
+    padding: 0.25rem;
+  }
+}
