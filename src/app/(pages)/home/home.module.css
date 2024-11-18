@@ -58,6 +58,7 @@
     --blue-600
   ); /* Cor do ícone, ou escolha uma variável ou cor fixa */
   padding: 8px;
+  margin-left: 20rem;
   border-radius: 50%; /* Torna o botão circular, opcional */
   transition: transform 0.2s ease;
 
