@@ -15,9 +15,9 @@
 .navItem {
   display: flex;
   align-items: center;
-  padding: 8px;
+  padding: 0.5rem;
   border-radius: 4px;
-  gap: 8px; /* Espaço entre ícone e texto */
+  gap: 0.5rem; /* Espaço entre ícone e texto */
   cursor: pointer; /* Mostra que a linha é clicável */
   text-decoration: none; /* Remove sublinhado */
 }
@@ -27,17 +27,17 @@
 }
 
 .navItem:hover {
-  background-color: var(--bg-100);
+  background-color: var(--bg-shadow);
   border-radius: 8px;
   padding: 0.5rem;
   transform: translateX(8px); /* Move 10px para a direita */
 }
 
 .active {
-  background-color: #0070f3;
-  color: white;
+  background-color: var(--blue-600);
+  color: var(--background);
   font-weight: bold;
 }
 .active:hover {
-  background-color: #0070f3;
+  background-color: var(--blue-600);
 }
