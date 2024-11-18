@@ -9,6 +9,7 @@
 .pesquisaHeader {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
   justify-content: space-between;
   margin-bottom: 1.25rem;
   font-weight: normal;
@@ -58,7 +59,7 @@
     --blue-600
   ); /* Cor do ícone, ou escolha uma variável ou cor fixa */
   padding: 8px;
-  margin-left: 20rem;
+  margin-right: 40%;
   border-radius: 50%; /* Torna o botão circular, opcional */
   transition: transform 0.2s ease;
 
@@ -70,4 +71,31 @@
 .refreshButton:hover {
   transform: rotate(90deg); /* Animação de rotação */
   color: var(--blue-800); /* Cor no hover */
+}
+
+.tableContainer {
+  display: flex;
+  flex-direction: column; /* Empilha a tabela e o título verticalmente */
+  gap: 8px; /* Espaçamento entre o título e a tabela */
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .searchRow {
+    flex-direction: column; /* Empilha os elementos */
+    align-items: stretch; /* Faz os elementos ocuparem toda a largura */
+    gap: 0.5rem; /* Reduz o espaçamento entre os itens */
+  }
+
+  .searchInput {
+    width: 100%; /* Faz o campo de busca ocupar toda a largura */
+  }
+
+  .select {
+    width: 100%; /* Faz os selects ocuparem toda a largura */
+  }
+
+  .refreshButton {
+    align-self: center; /* Centraliza o botão, opcional */
+  }
 }

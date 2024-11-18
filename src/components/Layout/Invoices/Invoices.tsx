@@ -8,7 +8,7 @@ interface Customer {
 }
 
 type InvoiceStatus = "open" | "paid" | "void" | "uncollectible";
-
+type Situacao = "processando" | "concluido";
 interface Invoice {
   id: number;
   createTs: string;
@@ -17,21 +17,36 @@ interface Invoice {
   value: number; // Valor em centavos
 }
 
+interface Informacao {
+  data: Date;
+  processo: string;
+  area: string;
+  objeto: string;
+  atas_contratos: Situacao;
+  fornecedores: Situacao;
+}
+
 // Tipagem das propriedades do componente
-interface InvoicesProps {
-  invoices?: Invoice[];
+// interface InvoicesProps {
+//   invoices?: Invoice[];
+// }
+
+interface InformacoesProps {
+  informacoes?: Informacao;
 }
 
 const headers = [
-  { label: "Date", key: "date" },
-  { label: "Customer", key: "customer" },
-  { label: "Email", key: "email" },
-  { label: "Status", key: "status" },
-  { label: "Value", key: "value" },
+  { label: "Data", key: "data" },
+  { label: "Processo", key: "processo" },
+  { label: "Area", key: "area" },
+  { label: "Objeto", key: "objeto" },
+  { label: "Atas e Contratos", key: "atascontratos" },
+  { label: "Fornecedores", key: "fornecedores" },
 ];
 
-export default function Invoices({ invoices }: InvoicesProps) {
-  console.log(invoices);
+export default function Processos({ informacoes }: InformacoesProps) {
+  console.log(informacoes);
+
   return (
     <main className={styles.main}>
       <div className={styles.container}>

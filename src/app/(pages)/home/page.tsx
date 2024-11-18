@@ -7,6 +7,36 @@ import { FaPlus } from "react-icons/fa";
 import { FaSearch, FaSyncAlt } from "react-icons/fa";
 import CustomButton from "@/components/UI/Button/CustomButton";
 import ContainerWhiteBox from "@/components/Layout/Container/ContainerWhiteBox";
+import ScrollableTable from "@/components/Layout/ScrollTable/ScrollableTable";
+
+const headers = [
+  { label: "Data", key: "data" },
+  { label: "Processo", key: "processo" },
+  { label: "Area", key: "area" },
+  { label: "Objeto", key: "objeto" },
+  { label: "Atas e Contratos", key: "atascontratos" },
+  { label: "Fornecedores", key: "fornecedores" },
+];
+
+const data = [
+  {
+    data: "2024-11-01",
+    processo: "1234",
+    area: "DAF",
+    objeto: "Contrado de Fibra ótica",
+    atascontratos: "Concluido",
+    fornecedores: "Processando",
+  },
+  {
+    data: "2024-11-02",
+    processo: "5678",
+    area: "DSI",
+    objeto: "Locação de Equipamentos",
+    atascontratos: "Processando",
+    fornecedores: "Concluido",
+  },
+  // Adicione mais dados aqui
+];
 
 export default function Home() {
   const handleRefresh = () => {
@@ -51,6 +81,9 @@ export default function Home() {
           <button className={styles.refreshButton} onClick={handleRefresh}>
             <FaSyncAlt />
           </button>
+        </div>
+        <div className={styles.tableContainer}>
+          <ScrollableTable headers={headers} data={data} />
         </div>
       </ContainerWhiteBox>
     </main>

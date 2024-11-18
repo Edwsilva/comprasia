@@ -36,7 +36,6 @@
 }
 
 .active {
-  background-color: var(--blue-200);
   color: var(--blue-700);
   font-weight: bold;
 }

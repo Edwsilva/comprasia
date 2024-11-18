@@ -1,0 +1,32 @@
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px; /* Altura máxima da tabela */
+  overflow: auto; /* Rolagem lateral e vertical */
+  border: 1px solid #ccc; /* Borda ao redor do container */
+  border-radius: 8px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse; /* Remove os espaços entre as bordas */
+}
+
+.tableHeader,
+.tableCell {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Linha entre as células */
+  white-space: nowrap; /* Evita quebra de linha no conteúdo */
+}
+
+.tableHeader {
+  background-color: #f4f4f4; /* Cor de fundo do cabeçalho */
+  position: sticky; /* Mantém o cabeçalho visível ao rolar */
+  top: 0;
+  z-index: 1;
+}
+
+.tableRow:hover {
+  background-color: #f9f9f9; /* Destaque ao passar o mouse */
+}
