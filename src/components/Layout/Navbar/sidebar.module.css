@@ -1,0 +1,43 @@
+.sidebar {
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  width: 13.75rem;
+  height: calc(100vh - 5rem);
+  background-color: var(--background);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.25rem;
+  gap: 5rem;
+  z-index: 10;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 4px;
+  gap: 8px; /* Espaço entre ícone e texto */
+  cursor: pointer; /* Mostra que a linha é clicável */
+  text-decoration: none; /* Remove sublinhado */
+}
+
+.iconContainer {
+  font-size: 1.25rem;
+}
+
+.navItem:hover {
+  background-color: var(--bg-100);
+  border-radius: 8px;
+  padding: 0.5rem;
+  transform: translateX(8px); /* Move 10px para a direita */
+}
+
+.active {
+  background-color: #0070f3;
+  color: white;
+  font-weight: bold;
+}
+.active:hover {
+  background-color: #0070f3;
+}

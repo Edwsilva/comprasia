@@ -1,68 +1,36 @@
-# NOTAS GERAIS
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-**DEVOPS - ANÁLISE PRÉVIA**
-O projeto deve ser submetido a análise prévia dos times de arquitetura de software,
-devops e qualidade de software da empresa a fim de que sejam definidos ou
-analisados seus componentes, estruturas, ligações e processos para melhoria
-contínua.
-**COMPONENTES NÃO HOMOLOGADOS**
-O projeto deve usar componentes homologados pela empresa tais como linguagens
-de programação, banco de dados, servidores de aplicação, servidores web e
-consumo de serviços externos etc. Caso use algum componente desconhecido
-favor informar as equipes de arquitetura e devops da empresa.
-Exemplo de componentes que necessitam de prévia análise
-- Uso de linguagens de programação não homologadas pela empresa;
-- Uso de banco de dados não suportados. Atualmente são suportados Mariadb,
-SqlServer e Oracle;
-- Gerenciadores de repositórios de pacotes não reconhecidos, como por exemplo
-servidores nexus sonatype externos ao ambiente da empresa;
-- Uso de servidores web ou de aplicação não suportados pela empresa;
-- Uso de repositórios de imagens externos. São permitidos o uso de imagens
-oficiais provenientes do DockerHub, imagens certificadas do catálogo da RedHat e
-do registry do gitlab interno da empresa;
-# Links Úteis
-## Documentações Gerais
-[Documentações sobre Git, GitLab, Jenkins
-etc](https://git.apps.rio.gov.br/processos-iplanrio/qualidade-publico/-/tree/master/ferr
-amentas/documentos/versionamento%20de%20sistemas)<br>
-[Documentação que orienta no versionamento de documentos e fontes para fábricas
-que trabalham com GDF e
-Git](https://git.apps.rio.gov.br/processos-iplanrio/qualidade-publico/tree/master/ferra
-mentas/documentos/versionamento%20de%20sistemas/fabricas)
+## Getting Started
 
-## Gestão de Branches
-[Entendo um workflow de
-trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)<br>
-[Gestão de branches com gitlab
-flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html)<br>
-[Gestão de branches com github
-flow](https://docs.github.com/pt/get-started/quickstart/github-flow)<br>
-[Gestão de branches com
-gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
-<br>
-https://danielkummer.github.io/git-flow-cheatsheet/index.pt_BR.html
+First, run the development server:
 
-## Vídeos tutoriais
-[GitLab](https://www.youtube.com/results?search_query=gitlabs+tutorial)<br>
-[TortoiseGit](https://www.youtube.com/results?search_query=+tortoise+git)
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Ferramentas
-[Trocar senha de acesso ao
-Git/JIRA/RioMail](https://minhaconta.prefeitura.rio/riomail/private/login)<br>
-[JIRA](http://jeap.rio.rj.gov.br/jira/login.jsp)<br>
-[Jenkins](http://jdev.rio.rj.gov.br/bob/)<br>
-[Iplanfacil](http://iplanfacil.rio.rj.gov.br/)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Contatos
-Pedro Claudio de Lima e Silva<br>
-<pedro.silva@prefeitura.rio><br>
-Ramiris Albuquerque da Silva<br>
-<ramiris.silva@iplanrio.rio.rj.gov.br><br>
-Ricardo Alex Soares<br>
-<ricardo.soares@prefeitura.rio><br>
-Roberto Leandro de Sousa Silva<br>
-<robertol.silva@prefeitura.rio><br>
-Victor Malcher<br>
-<vitor.malcher@prefeitura.rio><br>
-Gerência de Arquitetura e Integração<br>
-IplanRio<br>
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
