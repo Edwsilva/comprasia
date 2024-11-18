@@ -1,8 +1,8 @@
 .container {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Altura total da janela */
     position: static;
+    overflow: hidden; /* Esconde a barra de rolagem */
   }
 
 .pesquisaHeader {
