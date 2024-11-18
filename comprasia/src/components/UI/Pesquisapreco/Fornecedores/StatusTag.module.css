@@ -1,0 +1,24 @@
+.status {
+    padding: 0.4rem 2rem;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    text-align: center;
+    display: inline-block;
+    width: 12vw;
+  }
+  
+  .declined {
+    background-color: #EE8273;
+    color: white;
+  }
+  
+  .pending {
+    background-color: #E89F57;
+    color: white;
+  }
+  
+  .sent {
+    background-color: #51A383;
+    color: white;
+  }
+  

@@ -1,0 +1,46 @@
+
+.dadosGerais {
+    padding: 16px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+.details {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    gap: 100px; /* Espaçamento entre os elementos */
+  }
+  
+.object {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    gap: 100px; /* Espaçamento entre os elementos */
+}
+
+.keywords {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.keywords p {
+    font-weight: bold;
+    color: #333;
+}
+
+.keywordsList {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    gap: 10px; /* Espaçamento entre os elementos */
+    list-style-type: none;
+}
+
+.keywordItem {
+    background-color: #8BB1FF; /* Cor azul */
+    color: white; /* Texto branco */
+    padding: 5px 10px; /* Espaçamento interno para as palavras */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-weight: bold; /* Negrito para as palavras */
+    }
