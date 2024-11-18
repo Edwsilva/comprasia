@@ -55,20 +55,17 @@ export default function Pesquisa() {
       </div>
       <div className={styles.whiteBox}>
         <div className={styles.buttonsContainer}>
-          {Object.keys(sections).map((section) => {
-            console.log("Current section:", section);
-            return (
-              <button
-                key={section}
-                className={`${styles.button} ${
-                  activeSection === section ? styles.activeButton : ""
-                }`}
-                onClick={() => setActiveSection(section as Section)}
-              >
-                {section}
-              </button>
-            );
-          })}
+          {Object.keys(sections).map((section) => (
+            <button
+              key={section}
+              className={`${styles.button} ${
+                activeSection === section ? styles.activeButton : ""
+              }`}
+              onClick={() => setActiveSection(section as Section)}
+            >
+              {section}
+            </button>
+          ))}
         </div>
         <div className={styles.content}>{sections[activeSection]}</div>
       </div>
