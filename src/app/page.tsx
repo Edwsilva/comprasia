@@ -11,6 +11,7 @@ import Invoices from "@/components/Layout/Invoices/Invoices";
 import ContainerHome from "@/components/Layout/Container/ContainerHome";
 // import style from "./page.module.css";
 import utilStyles from "@/utils/styles/utils.module.css";
+import Principal from "@/app/(pages)/home/page";
 
 export default function Home() {
   const invoices = [
@@ -56,97 +57,8 @@ export default function Home() {
     },
   ];
   return (
-    <ContainerHome>
-      <Head>
-        <title>
-          <h1>TESTE</h1>
-        </title>
-      </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Sou eu</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={utilStyles.headingMd}>
-        <p>Sou eu</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-
-      <section className={utilStyles.headingMd}>
-        <p>Sou eu</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={utilStyles.headingMd}>
-        <p>Sou eu</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={utilStyles.headingMd}>
-        <p>Sou eu</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={utilStyles.headingMd}>
-        <p>Sou eu</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={utilStyles.headingMd}>
-        <p>Sou eu</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={utilStyles.headingMd}>
-        <p>Sou eu</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={utilStyles.headingMd}>
-        <p>Sou eu</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={utilStyles.headingMd}>
-        <p>Sou eu</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={utilStyles.headingMd}>
-        <p>Sou ewwwu</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={utilStyles.headingMd}>
-        <p>Sou ewwwu</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-    </ContainerHome>
+    // <ContainerHome>
+    <Principal />
+    // </ContainerHome>
   );
 }
