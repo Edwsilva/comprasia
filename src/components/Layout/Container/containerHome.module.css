@@ -1,9 +1,17 @@
 .container {
   margin: 0 auto;
   background-color: var(--background);
+  background-color: brown;
   width: 100%;
   height: calc(100vh - 10.4rem);
-  overflow: auto;
+  position: static;
+  /* overflow: auto; */
+}
+._container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Altura total da janela */
+  position: static;
 }
 
 @media screen and (max-width: 60rem) {

@@ -13,10 +13,11 @@ interface TableProps {
 
 const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 5; // Defina quantas linhas deseja mostrar por página
+  const rowsPerPage = 12; // Defina quantas linhas deseja mostrar por página
 
   const totalPages = Math.ceil(data.length / rowsPerPage); // Calcula o número total de páginas
   const startIndex = (currentPage - 1) * rowsPerPage;
+  console.log("startIndex ", startIndex);
   const endIndex = startIndex + rowsPerPage;
   const currentData = data.slice(startIndex, endIndex); // Dados da página atual
 
@@ -75,7 +76,7 @@ const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
             </tr>
           </thead>
           <tbody>
-            {data.map((row, rowIndex) => (
+            {currentData.map((row, rowIndex) => (
               <tr key={rowIndex} className={styles.tableRow}>
                 {headers.map((header) => (
                   <td key={header.key} className={styles.tableCell}>
@@ -95,7 +96,9 @@ const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
         <button onClick={goToPrevPage} disabled={currentPage === 1}>
           <FaChevronLeft />
         </button>
+        <span>Anterior</span>
         {renderPagination()}
+        <span>Próximo</span>
         <button onClick={goToNextPage} disabled={currentPage === totalPages}>
           <FaChevronRight />
         </button>
