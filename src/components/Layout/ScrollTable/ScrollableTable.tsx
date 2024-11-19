@@ -13,7 +13,7 @@ interface TableProps {
 
 const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 11; // Defina quantas linhas deseja mostrar por página
+  const rowsPerPage = 10; // Defina quantas linhas deseja mostrar por página
 
   const totalPages = Math.ceil(data.length / rowsPerPage); // Calcula o número total de páginas
   const startIndex = (currentPage - 1) * rowsPerPage;
