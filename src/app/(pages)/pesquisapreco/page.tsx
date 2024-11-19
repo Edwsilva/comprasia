@@ -5,6 +5,7 @@ import styles from './pesquisapreco.module.css';
 
 import DadosGerais from '@/components/UI/Pesquisapreco/DadosGerais/DadosGerais';
 import Fornecedores from '@/components/UI/Pesquisapreco/Fornecedores/FornecedoresTab';
+import AtosContratos from '@/components/UI/Pesquisapreco/AtosContratos/AtosContratos';
 
 
 type Section = 'Dados Gerais' | 'Fornecedores' | 'Atas e Contratos' | 'Mapa de Pesquisa de Preços';
@@ -15,7 +16,7 @@ export default function Pesquisa() {
   const sections: Record<Section, JSX.Element> = {
     'Dados Gerais': <DadosGerais />,
     'Fornecedores': <Fornecedores />,
-    'Atas e Contratos': <p>Conteúdo da seção Atas e Contratos</p>,
+    'Atas e Contratos': <AtosContratos />,
     'Mapa de Pesquisa de Preços': <p>Conteúdo da seção Mapa de Pesquisa de Preços</p>,
   };
 

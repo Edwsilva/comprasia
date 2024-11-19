@@ -1,0 +1,25 @@
+/* Search Box Styles */
+.searchBoxWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .searchBox {
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 16px;
+    background-color: white;
+    color: #888C9F;
+  }
+  
+  .searchBoxWrapper input:focus {
+    outline: transparent;
+  }
+  
+  .searchIcon {
+    position: absolute;
+    right: 8px;
+    color: #888C9F;
+    pointer-events: none; /* Prevent clicks on the icon */
+  }

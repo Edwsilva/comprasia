@@ -1,0 +1,106 @@
+/* Fornecedores Section */
+.atosContratosSection {
+    margin: 16px 0;
+    height: 100%;
+  }
+  
+  /* Header Styles */
+  .header {
+    display: flex;
+    margin-bottom: 16px;
+    justify-content: space-between;
+  }
+  
+  .headerFilters {
+    display: flex;
+    gap: 16px;
+  }
+
+
+  /* Table Styles */
+
+.tableContainer {
+    max-height: 80%;
+    overflow-y: auto;  /* Adiciona a barra de rolagem vertical */
+    scrollbar-color: #ccc #f0f0f0; /* Cor do "polegar" e do fundo */
+    scrollbar-width: normal; /* Largura da barra (opções: auto, thin, none) */
+  
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures consistent column widths */
+    max-height: 100vh;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .table th,
+  .table td {
+    padding: 8px;
+    text-align: left;
+    height: 6vh;
+  }
+  
+  .table th {
+    background-color: #f4f4f4;
+    text-align: left;
+  }
+  
+  .table td {
+    border: 1px solid #F6F6F6;
+    border-width: 0 0 1px 0; /* Only bottom border */
+  }
+  
+  .table tbody {
+    border: 1px solid #F6F6F6;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  /* Column Widths */
+  .table .siteColumn {
+    width: 8vw;
+  }
+  
+  .table .palavraChaveColumn {
+    width: 8vw; /* Occupies remaining space */
+  }
+
+  .table .objetoColumn {
+    width: auto;
+  }
+  .table .similaridadeColumn {
+    width: 8vw;
+  }
+
+  .table .acoesColumn {
+    width: 5vw;
+  }
+  /* Rounded Corners */
+  .table th.cnpjColumn {
+    border-top-left-radius: 16px;
+  }
+  
+  .table th.statusColumn {
+    border-top-right-radius: 16px;
+  }
+  
+  /* Status Cell Styles */
+  .table .palavraChaveCell {
+    padding: 0.5rem 0.1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    align-self: center; 
+    text-align: center;
+    background-color: #8BB1FF;
+    color: black;
+    width: 5vw;
+
+  }
+  
+
+  

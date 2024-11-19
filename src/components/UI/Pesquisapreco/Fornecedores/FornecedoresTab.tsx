@@ -1,9 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { CiSearch } from "react-icons/ci";
 import styles from './FornecedoresTab.module.css';
 import StatusTag from './StatusTag';
+import SearchBox from '@/components/UI/SearchBox/SearchBox';
+import DropdownFilter from '../../DropdownFilter/DropdownFilter';
+
 import { FaChevronRight } from "react-icons/fa";
 
 interface Fornecedor {
@@ -33,8 +35,14 @@ const mockFornecedores: Fornecedor[] = [
 
 export default function Fornecedores() {
   const [fornecedores, setFornecedores] = useState<Fornecedor[]>(mockFornecedores);
-  const [statusFilter, setStatusFilter] = useState<string>('Todos');
+  const [statusFilter, setStatusFilter] = useState<string>('Status');
   const [searchTerm, setSearchTerm] = useState<string>('');
+
+  const statusOptions = [
+    { value: 'Declínio', label: 'Declínio' },
+    { value: 'Aguardando', label: 'Aguardando' },
+    { value: 'Proposta Enviada', label: 'Proposta Enviada' },
+  ];
 
   useEffect(() => {
     // Simulação de API
@@ -44,38 +52,26 @@ export default function Fornecedores() {
   }, []);
 
   const filteredFornecedores = fornecedores.filter((fornecedor) =>
-    (statusFilter === 'Todos' || fornecedor.status === statusFilter) &&
+    (statusFilter === 'Status' || fornecedor.status === statusFilter) &&
     fornecedor.razaoSocial.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <section className={styles.fornecedoresSection}>
       <div className={styles.header}>
-        <div className={styles.searchBoxWrapper}>
-          <input
-            type="search"
-            placeholder="Pesquisar"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className={styles.searchBox}
-            
-          />
-          <span className={styles.searchIcon}>
-            <CiSearch size={20}/>
-          </span>
-        </div>
-
-        <select
+        <>
+          <SearchBox
+          placeholder="Pesquisar"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        </>
+          <DropdownFilter
           value={statusFilter}
-          onChange={(e) => setStatusFilter(e.target.value)}
-          className={styles.statusDropdown}
-        >
-          <option value="Todos">Todos</option>
-          <option value="Declínio">Declínio</option>
-          <option value="Aguardando">Aguardando</option>
-          <option value="Proposta Enviada">Proposta Enviada</option>
-        </select>
-
+          onChange={(value) => setStatusFilter(value)} // Atualiza o estado
+          options={statusOptions}
+          placeholder="Status"
+        />
         <button className={styles.newQuoteButton}>Nova Cotação</button>
       </div>
       <div className={styles.tableContainer}>
