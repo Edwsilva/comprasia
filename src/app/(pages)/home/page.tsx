@@ -35,7 +35,190 @@ const data = [
     atascontratos: "Processando",
     fornecedores: "Concluido",
   },
-  // Adicione mais dados aqui
+  {
+    data: "2024-11-01",
+    processo: "1234",
+    area: "DAF",
+    objeto: "Contrado de Fibra ótica",
+    atascontratos: "Concluido",
+    fornecedores: "Processando",
+  },
+  {
+    data: "2024-11-02",
+    processo: "5678",
+    area: "DSI",
+    objeto: "Locação de Equipamentos",
+    atascontratos: "Processando",
+    fornecedores: "Concluido",
+  },
+  {
+    data: "2024-11-03",
+    processo: "9123",
+    area: "TIC",
+    objeto: "Desenvolvimento de Software",
+    atascontratos: "Em Andamento",
+    fornecedores: "Aguardando",
+  },
+  {
+    data: "2024-11-01",
+    processo: "1234",
+    area: "DAF",
+    objeto: "Contrado de Fibra ótica",
+    atascontratos: "Concluido",
+    fornecedores: "Processando",
+  },
+  {
+    data: "2024-11-02",
+    processo: "5678",
+    area: "DSI",
+    objeto: "Locação de Equipamentos",
+    atascontratos: "Processando",
+    fornecedores: "Concluido",
+  },
+  {
+    data: "2024-11-01",
+    processo: "1234",
+    area: "DAF",
+    objeto: "Contrado de Fibra ótica",
+    atascontratos: "Concluido",
+    fornecedores: "Processando",
+  },
+  {
+    data: "2024-11-02",
+    processo: "5678",
+    area: "DSI",
+    objeto: "Locação de Equipamentos",
+    atascontratos: "Processando",
+    fornecedores: "Concluido",
+  },
+  {
+    data: "2024-11-03",
+    processo: "9123",
+    area: "TIC",
+    objeto: "Desenvolvimento de Software",
+    atascontratos: "Em Andamento",
+    fornecedores: "Aguardando",
+  },
+  {
+    data: "2024-11-01",
+    processo: "1234",
+    area: "DAF",
+    objeto: "Contrado de Fibra ótica",
+    atascontratos: "Concluido",
+    fornecedores: "Processando",
+  },
+  {
+    data: "2024-11-02",
+    processo: "5678",
+    area: "DSI",
+    objeto: "Locação de Equipamentos",
+    atascontratos: "Processando",
+    fornecedores: "Concluido",
+  },
+  {
+    data: "2024-11-01",
+    processo: "1234",
+    area: "DAF",
+    objeto: "Contrado de Fibra ótica",
+    atascontratos: "Concluido",
+    fornecedores: "Processando",
+  },
+  {
+    data: "2024-11-02",
+    processo: "5678",
+    area: "DSI",
+    objeto: "Locação de Equipamentos",
+    atascontratos: "Processando",
+    fornecedores: "Concluido",
+  },
+  {
+    data: "2024-11-03",
+    processo: "9123",
+    area: "TIC",
+    objeto: "Desenvolvimento de Software",
+    atascontratos: "Em Andamento",
+    fornecedores: "Aguardando",
+  },
+  {
+    data: "2024-11-01",
+    processo: "1234",
+    area: "DAF",
+    objeto: "Contrado de Fibra ótica",
+    atascontratos: "Concluido",
+    fornecedores: "Processando",
+  },
+  {
+    data: "2024-11-02",
+    processo: "5678",
+    area: "DSI",
+    objeto: "Locação de Equipamentos",
+    atascontratos: "Processando",
+    fornecedores: "Concluido",
+  },
+  {
+    data: "2024-11-01",
+    processo: "1234",
+    area: "DAF",
+    objeto: "Contrado de Fibra ótica",
+    atascontratos: "Concluido",
+    fornecedores: "Processando",
+  },
+  {
+    data: "2024-11-02",
+    processo: "5678",
+    area: "DSI",
+    objeto: "Locação de Equipamentos",
+    atascontratos: "Processando",
+    fornecedores: "Concluido",
+  },
+  {
+    data: "2024-11-03",
+    processo: "9123",
+    area: "TIC",
+    objeto: "Desenvolvimento de Software",
+    atascontratos: "Em Andamento",
+    fornecedores: "Aguardando",
+  },
+  {
+    data: "2024-11-01",
+    processo: "1234",
+    area: "DAF",
+    objeto: "Contrado de Fibra ótica",
+    atascontratos: "Concluido",
+    fornecedores: "Processando",
+  },
+  {
+    data: "2024-11-02",
+    processo: "5678",
+    area: "DSI",
+    objeto: "Locação de Equipamentos",
+    atascontratos: "Processando",
+    fornecedores: "Concluido",
+  },
+  {
+    data: "2024-11-01",
+    processo: "1234",
+    area: "DAF",
+    objeto: "Contrado de Fibra ótica",
+    atascontratos: "Concluido",
+    fornecedores: "Processando",
+  },
+  {
+    data: "2024-11-02",
+    processo: "5678",
+    area: "DSI",
+    objeto: "Locação de Equipamentos",
+    atascontratos: "Processando",
+    fornecedores: "Concluido",
+  },
+  {
+    data: "2024-11-03",
+    processo: "9123",
+    area: "TIC",
+    objeto: "Desenvolvimento de Software",
+    atascontratos: "Em Andamento",
+    fornecedores: "Aguardando",
+  },
 ];
 
 export default function Home() {
@@ -52,6 +235,7 @@ export default function Home() {
           icon={FaPlus}
           backgroundColor="var(--blue-600)"
           textColor="var(--background)"
+          borderRadius="32px"
           size={14}
           onClick={() => {}}
         />
@@ -61,7 +245,7 @@ export default function Home() {
           <div className={styles.searchInput}>
             <input
               type="text"
-              placeholder="Pesquisa"
+              placeholder="Pesquisar"
               className={styles.input}
             />
             <FaSearch className={styles.icon} />

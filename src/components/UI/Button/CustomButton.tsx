@@ -7,6 +7,7 @@ interface ButtonProps {
   icon: IconType; // Tipo do ícone do react-icons
   backgroundColor?: string;
   textColor?: string;
+  borderRadius?: string;
   size: number;
   onClick: () => void;
 }
@@ -16,6 +17,7 @@ const CustomButton: FC<ButtonProps> = ({
   icon: Icon,
   backgroundColor = "var(--blue-200)",
   textColor = "var(--background)",
+  borderRadius = "8px",
   size,
   onClick,
 }) => {
@@ -23,7 +25,7 @@ const CustomButton: FC<ButtonProps> = ({
     <button
       onClick={onClick}
       className={styles.button}
-      style={{ backgroundColor, color: textColor }}
+      style={{ backgroundColor, color: textColor, borderRadius }}
     >
       {title}
       <Icon size={size} color={textColor} />
