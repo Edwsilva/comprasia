@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from "./home.module.css";
 import TitleValue from "@/components/UI/TitleValue/TitleValue";
 import { FaPlus } from "react-icons/fa";
-import { FaSearch, FaSyncAlt } from "react-icons/fa";
+import { FaSearch, FaSyncAlt, FaChevronRight } from "react-icons/fa";
 import CustomButton from "@/components/UI/Button/CustomButton";
 import ContainerWhiteBox from "@/components/Layout/Container/ContainerWhiteBox";
 import ScrollableTable from "@/components/Layout/ScrollTable/ScrollableTable";

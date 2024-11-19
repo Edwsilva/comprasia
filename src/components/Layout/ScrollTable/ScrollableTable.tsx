@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./scrollableTable.module.css";
+import { FaChevronRight } from "react-icons/fa";
 
 interface Header {
   label: string;
@@ -22,6 +23,8 @@ const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
                 {header.label}
               </th>
             ))}
+            <th className={styles.tableHeader}></th>
+            {/* Adicionei uma coluna para o ícone */}
           </tr>
         </thead>
         <tbody>
@@ -32,6 +35,10 @@ const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
                   {row[header.key]}
                 </td>
               ))}
+
+              <td className={styles.iconCell}>
+                <FaChevronRight size={10} className={styles.chevronIcon} />
+              </td>
             </tr>
           ))}
         </tbody>
