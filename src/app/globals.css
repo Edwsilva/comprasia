@@ -3,6 +3,10 @@
   --foreground: #171717;
   --status-orange: #e89f57;
   --status-red: #ee8273;
+  --status-enviado: #E89F57;
+  --status-declinio: #EE8273;
+  --status-propostaenviada: #51A383;
+  --status-duvidas: #EED973;
   --black-900: #000000;
   --bg-shadow: #f5f5f5;
   --primary-400: #02b0d6;
@@ -22,7 +26,7 @@
   --blue-200: #E9F0FF;
  
   --blue-400: #4579fb;
-  --blue-500: #007bff;
+  --blue-500: #0056B3;
   --blue-600: #0070f3;
   --blue-700: #236bfe;
   --blue-800: #2f57c9;

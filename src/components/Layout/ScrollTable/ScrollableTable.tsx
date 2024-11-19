@@ -13,7 +13,7 @@ interface TableProps {
 
 const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 12; // Defina quantas linhas deseja mostrar por página
+  const rowsPerPage = 11; // Defina quantas linhas deseja mostrar por página
 
   const totalPages = Math.ceil(data.length / rowsPerPage); // Calcula o número total de páginas
   const startIndex = (currentPage - 1) * rowsPerPage;
@@ -66,23 +66,45 @@ const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
         <table className={styles.table}>
           <thead>
             <tr>
-              {headers.map((header) => (
-                <th key={header.key} className={styles.tableHeader}>
-                  {header.label}
-                </th>
-              ))}
+              {headers.map((header) => {
+                // Verifica se o header.label é "Atas e Contratos" ou "Fornecedores"
+                const headerClass =
+                  header.label === "Atas e Contratos" ||
+                  header.label === "Fornecedores"
+                    ? `${styles.tableHeader} ${styles.centered}`
+                    : styles.tableHeader; // Caso contrário, apenas a classe padrão
+
+                return (
+                  <th key={header.key} className={headerClass}>
+                    {header.label}
+                  </th>
+                );
+              })}
+              {/* Adiciona a coluna para o ícone */}
               <th className={styles.tableHeader}></th>
-              {/* Adicionei uma coluna para o ícone */}
             </tr>
           </thead>
           <tbody>
             {currentData.map((row, rowIndex) => (
               <tr key={rowIndex} className={styles.tableRow}>
-                {headers.map((header) => (
-                  <td key={header.key} className={styles.tableCell}>
-                    {row[header.key]}
-                  </td>
-                ))}
+                {headers.map((header) => {
+                  console.log(row);
+                  console.log(header.key);
+                  console.log(row[header.key]);
+                  const value = row[header.key];
+                  const statusClass =
+                    value === "Concluido"
+                      ? `${styles.status} ${styles.concluido}`
+                      : value === "Processando"
+                      ? `${styles.status} ${styles.processando}`
+                      : ""; // Caso o valor seja outro, sem cor personalizada
+
+                  return (
+                    <td key={header.key} className={styles.tableCell}>
+                      <span className={statusClass}>{value}</span>
+                    </td>
+                  );
+                })}
 
                 <td className={styles.iconCell}>
                   <FaChevronRight className={styles.chevronIcon} />
@@ -93,15 +115,20 @@ const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
         </table>
       </div>
       <div className={styles.pagination}>
-        <button onClick={goToPrevPage} disabled={currentPage === 1}>
-          <FaChevronLeft />
-        </button>
-        <span>Anterior</span>
+        {currentPage > 1 && (
+          <span onClick={goToPrevPage} className={styles.navButton}>
+            <FaChevronLeft />
+            Anterior
+          </span>
+        )}
+
         {renderPagination()}
-        <span>Próximo</span>
-        <button onClick={goToNextPage} disabled={currentPage === totalPages}>
-          <FaChevronRight />
-        </button>
+        {currentPage < totalPages && (
+          <span onClick={goToNextPage} className={styles.navButton}>
+            Próximo
+            <FaChevronRight />
+          </span>
+        )}
       </div>
     </div>
   );
