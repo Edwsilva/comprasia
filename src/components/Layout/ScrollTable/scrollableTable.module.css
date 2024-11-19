@@ -1,9 +1,9 @@
 .tableContainer {
   display: flex;
   flex-direction: column;
-  max-height: 25rem; /* Altura máxima da tabela */
+  max-height: 25rem;
   overflow: auto; /* Rolagem lateral e vertical */
-  border: 1px solid #ccc; /* Borda ao redor do container */
+  border: 1px solid #ccc;
   border-radius: 8px;
 }
 
@@ -16,7 +16,7 @@
 .tableCell {
   padding: 0.5rem 0.75rem;
   text-align: left;
-  border-bottom: 1px solid #ddd; /* Linha entre as células */
+  border-bottom: 1px solid #ddd;
   white-space: nowrap; /* Evita quebra de linha no conteúdo */
 }
 
@@ -38,6 +38,6 @@
 }
 
 .chevronIcon {
-  display: inline-block;
+  font-size: 0.625rem;
   margin: 0 auto;
 }

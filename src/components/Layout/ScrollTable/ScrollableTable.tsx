@@ -37,7 +37,7 @@ const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
               ))}
 
               <td className={styles.iconCell}>
-                <FaChevronRight size={10} className={styles.chevronIcon} />
+                <FaChevronRight className={styles.chevronIcon} />
               </td>
             </tr>
           ))}
