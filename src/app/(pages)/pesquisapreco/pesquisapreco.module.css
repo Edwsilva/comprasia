@@ -1,13 +1,20 @@
 .container {
     display: flex;
     flex-direction: column;
-    position: static;
-    overflow: hidden; /* Esconde a barra de rolagem */
+    top: 0rem;
+    left: 0rem;
+    bottom: 0rem;
+    right: 0rem;
+    background-color: #F6F6F6;
+    height: 100%;
+
+
   }
 
 .pesquisaHeader {
-    margin-bottom: 20px;
+    margin: 20px;
     font-weight: normal;
+    font-size: 1.5rem;
 }
   
 
@@ -19,6 +26,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Para um efeito de sombra */
     display: flex;
     flex-direction: column;
+    max-height: 85%;
+
 
 }
 
@@ -34,7 +43,7 @@
     border: none;
     cursor: pointer;
     color: #888; /* Cinza para texto inativo */
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     padding: 10px;
     transition: color 0.3s ease;
@@ -55,6 +64,6 @@
   }
 .content {
   flex: 1;
-  overflow-y: auto; /* Permite rolagem se o conteúdo for grande */
+  max-height: 100%;
 }
 

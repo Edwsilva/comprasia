@@ -3,7 +3,7 @@ import TitleValue from '@/components/UI/TitleValue/TitleValue';
 
 export default function DadosGerais() {
   return (
-    <div className={styles.dadosGerais}>
+    <div className={styles.container}>
       <section className={styles.details}>
         <TitleValue title="Processo" value="IPL-PRO-2024/0005999" />
         <TitleValue title="Área Demandante" value="DAF" />

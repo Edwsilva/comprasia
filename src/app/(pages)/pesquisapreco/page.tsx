@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import styles from './pesquisapreco.module.css';
-import DadosGerais from '@/components/UI/Pesquisapreco/DadosGerais';
+
+import DadosGerais from '@/components/UI/Pesquisapreco/DadosGerais/DadosGerais';
 import Fornecedores from '@/components/UI/Pesquisapreco/Fornecedores/FornecedoresTab';
 
 
@@ -21,8 +22,7 @@ export default function Pesquisa() {
   return (
     <main className={styles.container}>
       <div className={styles.pesquisaHeader}>
-        <h1>Pesquisa</h1>
-        <p>Conteúdo da página de Pesquisa preços.</p> 
+        Pesquisa de Preços {'>'} Processo X
       </div>
       <div className={styles.whiteBox}>
         <div className={styles.buttonsContainer}>

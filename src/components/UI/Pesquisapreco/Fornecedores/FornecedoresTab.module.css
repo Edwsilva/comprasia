@@ -1,14 +1,14 @@
 /* Fornecedores Section */
 .fornecedoresSection {
   margin: 16px 0;
+  height: 100%;
 }
 
 /* Header Styles */
 .header {
   display: flex;
-  gap: 18vw;
   margin-bottom: 16px;
-  align-items: center;
+  justify-content: space-between;
 }
 
 /* Search Box Styles */
@@ -16,7 +16,6 @@
   position: relative;
   display: flex;
   align-items: center;
-  margin: 1vw;
 }
 
 .searchBox {
@@ -65,11 +64,22 @@
   background-color: #0056b3;
 }
 
+.tableContainer {
+  max-height: 80%;
+  overflow-y: auto;  /* Adiciona a barra de rolagem vertical */
+  scrollbar-color: #ccc #f0f0f0; /* Cor do "polegar" e do fundo */
+  scrollbar-width: normal; /* Largura da barra (opções: auto, thin, none) */
+
+}
+
 /* Table Styles */
 .table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed; /* Ensures consistent column widths */
+  max-height: 100vh;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .table th,
@@ -82,7 +92,6 @@
 .table th {
   background-color: #f4f4f4;
   text-align: left;
-  font-weight: normal;
 }
 
 .table td {
@@ -100,7 +109,7 @@
 
 /* Column Widths */
 .table .cnpjColumn {
-  width: 12vw;
+  width: 15vw;
 }
 
 .table .razaoSocialColumn {
