@@ -88,9 +88,6 @@ const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
             {currentData.map((row, rowIndex) => (
               <tr key={rowIndex} className={styles.tableRow}>
                 {headers.map((header) => {
-                  console.log(row);
-                  console.log(header.key);
-                  console.log(row[header.key]);
                   const value = row[header.key];
                   const statusClass =
                     value === "Concluido"

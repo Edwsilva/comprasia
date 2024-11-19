@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./home.module.css";
 import TitleValue from "@/components/UI/TitleValue/TitleValue";
 import { FaPlus } from "react-icons/fa";
@@ -23,7 +23,7 @@ const data = [
     data: "2024-11-01",
     processo: "1234",
     area: "DAF",
-    objeto: "Contrado de Fibra ótica",
+    objeto: "Contrato de Fibra ótica",
     atascontratos: "Concluido",
     fornecedores: "Processando",
   },
@@ -39,7 +39,7 @@ const data = [
     data: "2024-11-01",
     processo: "1234",
     area: "DAF",
-    objeto: "Contrado de Fibra ótica",
+    objeto: "Contrato de Fibra ótica",
     atascontratos: "Concluido",
     fornecedores: "Processando",
   },
@@ -63,7 +63,7 @@ const data = [
     data: "2024-11-01",
     processo: "1234",
     area: "DAF",
-    objeto: "Contrado de Fibra ótica",
+    objeto: "Contrato de Fibra ótica",
     atascontratos: "Concluido",
     fornecedores: "Processando",
   },
@@ -79,7 +79,7 @@ const data = [
     data: "2024-11-01",
     processo: "1234",
     area: "DAF",
-    objeto: "Contrado de Fibra ótica",
+    objeto: "Contrato de Fibra ótica",
     atascontratos: "Concluido",
     fornecedores: "Processando",
   },
@@ -103,7 +103,7 @@ const data = [
     data: "2024-11-01",
     processo: "1234",
     area: "DAF",
-    objeto: "Contrado de Fibra ótica",
+    objeto: "Contrato de Fibra ótica",
     atascontratos: "Concluido",
     fornecedores: "Processando",
   },
@@ -119,7 +119,7 @@ const data = [
     data: "2024-11-01",
     processo: "1234",
     area: "DAF",
-    objeto: "Contrado de Fibra ótica",
+    objeto: "Contrato de Fibra ótica",
     atascontratos: "Concluido",
     fornecedores: "Processando",
   },
@@ -143,7 +143,7 @@ const data = [
     data: "2024-11-01",
     processo: "1234",
     area: "DAF",
-    objeto: "Contrado de Fibra ótica",
+    objeto: "Contrato de Fibra ótica",
     atascontratos: "Concluido",
     fornecedores: "Processando",
   },
@@ -159,7 +159,7 @@ const data = [
     data: "2024-11-01",
     processo: "1234",
     area: "DAF",
-    objeto: "Contrado de Fibra ótica",
+    objeto: "Contrato de Fibra ótica",
     atascontratos: "Concluido",
     fornecedores: "Processando",
   },
@@ -183,7 +183,7 @@ const data = [
     data: "2024-11-01",
     processo: "1234",
     area: "DAF",
-    objeto: "Contrado de Fibra ótica",
+    objeto: "Contrato de Fibra ótica",
     atascontratos: "Concluido",
     fornecedores: "Processando",
   },
@@ -199,7 +199,7 @@ const data = [
     data: "2024-11-01",
     processo: "1234",
     area: "DAF",
-    objeto: "Contrado de Fibra ótica",
+    objeto: "Contrato de Fibra ótica",
     atascontratos: "Concluido",
     fornecedores: "Processando",
   },
@@ -217,11 +217,32 @@ const data = [
     area: "TIC",
     objeto: "Desenvolvimento de Software",
     atascontratos: "Processando",
-    fornecedores: "Processando",
+    fornecedores: "Aguardando",
   },
 ];
 
 export default function Home() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
+  const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
+
+  const filteredData = data.filter((row) =>
+    // row.objeto.toLowerCase().includes(searchTerm.toLowerCase())
+    row.objeto.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
+  );
+
+  useEffect(() => {
+    if (timer) clearTimeout(timer); // Limpa o timeout anterior
+
+    const newTimer = setTimeout(() => {
+      setDebouncedSearchTerm(searchTerm); // Atualiza o estado de pesquisa com o valor atual
+    }, 500);
+
+    setTimer(newTimer); // Atualiza o timer
+
+    return () => clearTimeout(newTimer);
+  }, [searchTerm]);
+
   const handleRefresh = () => {
     console.log("Refresh clicado!");
   };
@@ -247,6 +268,8 @@ export default function Home() {
               type="text"
               placeholder="Pesquisar"
               className={styles.input}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
             <FaSearch className={styles.icon} />
           </div>
@@ -267,7 +290,7 @@ export default function Home() {
           </button>
         </div>
         <div className={styles.tableContainer}>
-          <ScrollableTable headers={headers} data={data} />
+          <ScrollableTable headers={headers} data={filteredData} />
         </div>
       </ContainerWhiteBox>
     </main>
