@@ -250,7 +250,7 @@ export default function Home() {
   return (
     <main className={styles.container}>
       <div className={styles.pesquisaHeader}>
-        <h1>Pesquisa de Preços</h1>
+        <p>Pesquisa de Preços</p>
         <CustomButton
           title="Nova Pesquisa"
           icon={FaPlus}
