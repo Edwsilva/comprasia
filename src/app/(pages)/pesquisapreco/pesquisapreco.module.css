@@ -1,70 +1,64 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    top: 0rem;
-    left: 0rem;
-    bottom: 0rem;
-    right: 0rem;
-    background-color: #F6F6F6;
-    height: 100%;
-
-
-  }
+  display: flex;
+  flex-direction: column;
+  top: 0rem;
+  left: 0rem;
+  bottom: 0rem;
+  right: 0rem;
+  background-color: #f6f6f6;
+  height: 100%;
+}
 
 .pesquisaHeader {
-    margin: 20px;
-    font-weight: normal;
-    font-size: 1.5rem;
+  margin: 20px;
+  font-weight: normal;
+  font-size: 1.5rem;
 }
-  
 
 .whiteBox {
-    flex: 1; /* Ocupa o espaço restante */
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px; /* Opcional */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Para um efeito de sombra */
-    display: flex;
-    flex-direction: column;
-    max-height: 85%;
-
-
+  flex: 1; /* Ocupa o espaço restante */
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px; /* Opcional */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Para um efeito de sombra */
+  display: flex;
+  flex-direction: column;
+  max-height: 85%;
 }
 
 .buttonsContainer {
-    display: flex;
-    position: relative;
-    border-bottom: 2px solid #ddd; /* Linha base cinza */
-    gap: 5vw; /* Espaçamento entre os botões */
-    text-align: left;
+  display: flex;
+  position: relative;
+  border-bottom: 2px solid #ddd; /* Linha base cinza */
+  gap: 5vw; /* Espaçamento entre os botões */
+  text-align: left;
 }
-  .button {
-    position: relative;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #888; /* Cinza para texto inativo */
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 10px;
-    transition: color 0.3s ease;
-  }
-  
-  .activeButton {
-    color: #007bff; /* Azul para botão ativo */
-  }
-  
-  .activeButton::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: #007bff; /* Linha azul para botão ativo */
-  }
+.button {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888; /* Cinza para texto inativo */
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.activeButton {
+  color: #007bff; /* Azul para botão ativo */
+}
+
+.activeButton::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #007bff; /* Linha azul para botão ativo */
+}
 .content {
   flex: 1;
   max-height: 100%;
 }
-

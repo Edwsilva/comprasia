@@ -8,6 +8,7 @@ import { FaSearch, FaSyncAlt, FaChevronRight } from "react-icons/fa";
 import CustomButton from "@/components/UI/Button/CustomButton";
 import ContainerWhiteBox from "@/components/Layout/Container/ContainerWhiteBox";
 import ScrollableTable from "@/components/Layout/ScrollTable/ScrollableTable";
+import ContainerHome from "@/components/Layout/Container/ContainerHome";
 
 const headers = [
   { label: "Data", key: "data" },
@@ -207,7 +208,7 @@ const data = [
     data: "2024-11-02",
     processo: "5678",
     area: "DSI",
-    objeto: "Locação de Equipamentos",
+    objeto: "Locaçãosdf gsdf gsdgfhgfh dfh dfsdfde Equipamentos",
     atascontratos: "Processando",
     fornecedores: "Concluido",
   },
@@ -248,9 +249,9 @@ export default function Home() {
   };
 
   return (
-    <main className={styles.container}>
+    <ContainerHome>
       <div className={styles.pesquisaHeader}>
-        <p>Pesquisa de Preços</p>
+        Pesquisa de Preços
         <CustomButton
           title="Nova Pesquisa"
           icon={FaPlus}
@@ -293,6 +294,6 @@ export default function Home() {
           <ScrollableTable headers={headers} data={filteredData} />
         </div>
       </ContainerWhiteBox>
-    </main>
+    </ContainerHome>
   );
 }

@@ -81,7 +81,7 @@ const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
                 );
               })}
               {/* Adiciona a coluna para o ícone */}
-              <th className={styles.tableHeader}></th>
+              <th className={styles.tableHeader}>&nbsp;</th>
             </tr>
           </thead>
           <tbody>

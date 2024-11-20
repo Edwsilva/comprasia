@@ -1,17 +1,18 @@
 .container {
-  margin: 0 auto;
-  background-color: var(--background);
-  background-color: brown;
-  width: 100%;
-  height: calc(100vh - 10.4rem);
-  position: static;
-  /* overflow: auto; */
-}
-._container {
   display: flex;
+  margin: 0px;
   flex-direction: column;
-  height: 100vh; /* Altura total da janela */
-  position: static;
+  padding: 0.81rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  top: 0rem;
+  left: 0rem;
+  bottom: 0rem;
+  right: 0rem;
+  background-color: var(--bg-dashboard);
+  /* background-color: aqua; */
+  height: 100%;
+  overflow: auto;
 }
 
 @media screen and (max-width: 60rem) {

@@ -6,7 +6,7 @@ type Props = {
 };
 
 const ContainerHome = ({ children }: Props) => {
-  return <div className={styles.container}>{children}</div>;
+  return <main className={styles.container}>{children}</main>;
 };
 
 export default ContainerHome;

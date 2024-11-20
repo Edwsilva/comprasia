@@ -1,36 +1,43 @@
 .tableContainer {
   display: flex;
   flex-direction: column;
+  margin-left: 1rem;
   /* max-height: 25rem; */
   /* overflow: auto;  */
-  border: 1px solid #ccc;
+  border: 1px solid #f6f6f6;
   border-radius: 8px;
-  overflow: hidden; /* Remove completamente a rolagem */
   height: auto; /* Remove qualquer restrição de altura */
 }
 
 .table {
+  border-width: 1px 0;
   width: 100%;
   border-collapse: collapse; /* Remove os espaços entre as bordas */
+  border: 5px solid #f6f6f6;
+  border-width: 0 0 5px 0;
 }
 
 .tableHeader,
 .tableCell {
   padding: 0.5rem 0.75rem;
   text-align: left;
-  border-bottom: 1px solid #ddd;
-  white-space: nowrap; /* Evita quebra de linha no conteúdo */
-}
-
-.centered {
-  text-align: center;
+  height: 6vh;
+  border: 1px solid #f6f6f6;
+  border-width: 0 0 1px 0;
+  /* background-color: #d83bb4; */
 }
 
 .tableHeader {
   background-color: var(--bg-shadow);
+  /* background-color: #007bff; */
   position: sticky; /* Mantém o cabeçalho visível ao rolar */
   top: 0;
   z-index: 1;
+  border: 1px solid #f6f6f6;
+  border-width: 0 0 1px 0;
+}
+.centered {
+  text-align: center;
 }
 
 .tableRow:hover {
@@ -40,7 +47,9 @@
   width: 1.25rem;
   text-align: center;
   vertical-align: middle;
-  border-bottom: 1px solid #ddd;
+
+  border: 1px solid #f6f6f6;
+  border-width: 0 0 1px 0;
   /* background-color: #28a745; */
   padding-right: 2rem;
 }
