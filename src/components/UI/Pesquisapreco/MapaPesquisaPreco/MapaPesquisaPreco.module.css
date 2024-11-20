@@ -1,5 +1,5 @@
 /* Fornecedores Section */
-.atosContratosSection {
+.mapaSection {
     margin: 16px 0;
     height: 100%;
   }
@@ -11,13 +11,41 @@
     justify-content: space-between;
   }
   
-  .headerFilters {
+  /* Button Styles */
+  .mapaPesquisaButton {
     display: flex;
-    gap: 16px;
+    background-color: white;
+    color: #236BFE;
+    border: 1px solid #236BFE;
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    cursor: pointer;
+    align-self: center;
+    gap: 0.5rem;
+  }
+  
+  .mapaPesquisaButton:hover {
+    background-color: #f0f0f0;
   }
 
+  .addButton {
+    background-color: #236BFE;
+    color: white;
+    border: 1px solid #236BFE;
+    padding: 0.8rem 1rem;
+    width: 15vw;
+    border-radius: 24px;
+    cursor: pointer;
+    align-self: center;
+    margin-left: 1rem;
+  }
 
-  /* Table Styles */
+    .addButton:hover {
+        background-color: #1A4FBD;
+    }
+
+
+    /* Table Styles */
 
 .tableContainer {
     max-height: 80%;
@@ -34,6 +62,7 @@
     max-height: 100vh;
     font-size: 1rem;
     font-weight: 500;
+
   }
   
   .table th,
@@ -41,6 +70,7 @@
     padding: 8px;
     text-align: left;
     height: 6vh;
+
   }
   
   .table th {
@@ -55,6 +85,7 @@
   
   .table tbody {
     border: 1px solid #F6F6F6;
+
   }
   
   .table tbody tr:hover {
@@ -62,30 +93,47 @@
   }
   
   /* Column Widths */
-  .table .siteColumn {
-    width: 8vw;
+  .table .tipoColumn {
+    width: 10vw;
+    text-align: center;
+  }
+
+  .table .razaoSocialColumn {
+    width: 15vw;
+  }
+
+  .table .razaoSocialCell {
+    display: flex;
+    align-items: center;
   }
   
-  .table .palavraChaveColumn {
-    width: 8vw; /* Occupies remaining space */
+  .table .descricaoColumn {
+    width: auto
   }
 
-  .table .objetoColumn {
-    width: auto;
+  .table .quantidadeColumn {
+    width: 8vw;
   }
-  .table .similaridadeColumn {
+  .table .valorUnitarioColumn {
     width: 8vw;
   }
 
-  .table .acoesColumn {
+  .table .valorTotalColumn {
+    width: 8vw;
+  }
+
+  .table .actionsColumn {
     width: 5vw;
   }
+
+
+
   /* Rounded Corners */
-  .table th.siteColumn {
+  .table th.tipoColumn {
     border-top-left-radius: 16px;
   }
   
-  .table th.acoesColumn {
+  .table th.actionsColumn {
     border-top-right-radius: 16px;
   }
   
@@ -101,6 +149,4 @@
     width: 5vw;
 
   }
-  
-
   

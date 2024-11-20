@@ -1,17 +1,20 @@
 .status {
-    padding: 0.6rem 3rem;
+    padding: 0.6rem 1rem;
     border-radius: 24px;
     font-size: 0.9rem;
     align-self: center; /* Opcional: centraliza verticalmente */
+    width: 2vw;
   }
   
-  .pending {
+  .fornecedor {
     background-color: #E89F57;
     color: white;
+
   }
   
-  .done {
+  .ata {
     background-color: #51A383;
     color: white;
+    padding: 0.6rem 2.6rem;
   }
   

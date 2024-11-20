@@ -11,6 +11,7 @@
     border-radius: 16px;
     background-color: white;
     color: #888C9F;
+    font-size: 1rem;
   }
   
   .searchBoxWrapper input:focus {

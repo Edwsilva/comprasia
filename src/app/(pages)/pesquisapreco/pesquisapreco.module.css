@@ -35,7 +35,8 @@
     display: flex;
     position: relative;
     border-bottom: 2px solid #ddd; /* Linha base cinza */
-    gap: 10vw; /* Espaçamento entre os botões */
+    gap: 5vw; /* Espaçamento entre os botões */
+    text-align: left;
 }
   .button {
     position: relative;

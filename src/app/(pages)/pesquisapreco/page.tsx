@@ -6,6 +6,7 @@ import styles from './pesquisapreco.module.css';
 import DadosGerais from '@/components/UI/Pesquisapreco/DadosGerais/DadosGerais';
 import Fornecedores from '@/components/UI/Pesquisapreco/Fornecedores/FornecedoresTab';
 import AtosContratos from '@/components/UI/Pesquisapreco/AtosContratos/AtosContratos';
+import MapaPesquisaPreco from '@/components/UI/Pesquisapreco/MapaPesquisaPreco/MapaPesquisaPreco';
 
 
 type Section = 'Dados Gerais' | 'Fornecedores' | 'Atas e Contratos' | 'Mapa de Pesquisa de Preços';
@@ -17,7 +18,7 @@ export default function Pesquisa() {
     'Dados Gerais': <DadosGerais />,
     'Fornecedores': <Fornecedores />,
     'Atas e Contratos': <AtosContratos />,
-    'Mapa de Pesquisa de Preços': <p>Conteúdo da seção Mapa de Pesquisa de Preços</p>,
+    'Mapa de Pesquisa de Preços': <MapaPesquisaPreco />,
   };
 
   return (
