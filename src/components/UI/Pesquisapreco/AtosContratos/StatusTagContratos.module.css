@@ -1,0 +1,17 @@
+.status {
+    padding: 0.6rem 3rem;
+    border-radius: 24px;
+    font-size: 0.9rem;
+    align-self: center; /* Opcional: centraliza verticalmente */
+  }
+  
+  .pending {
+    background-color: #E89F57;
+    color: white;
+  }
+  
+  .done {
+    background-color: #51A383;
+    color: white;
+  }
+  

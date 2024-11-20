@@ -1,0 +1,108 @@
+/* Fornecedores Section */
+.fornecedoresSection {
+  margin: 16px 0;
+  height: 100%;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  margin-bottom: 16px;
+  justify-content: space-between;
+}
+
+/* Button Styles */
+.newQuoteButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 60px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.newQuoteButton:hover {
+  background-color: #0056b3;
+}
+
+/* Table Styles */
+
+.tableContainer {
+  max-height: 80%;
+  overflow-y: auto;  /* Adiciona a barra de rolagem vertical */
+  scrollbar-color: #ccc #f0f0f0; /* Cor do "polegar" e do fundo */
+  scrollbar-width: normal; /* Largura da barra (opções: auto, thin, none) */
+
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Ensures consistent column widths */
+  max-height: 100vh;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  text-align: left;
+  height: 6vh;
+}
+
+.table th {
+  background-color: #f4f4f4;
+  text-align: left;
+}
+
+.table td {
+  border: 1px solid #F6F6F6;
+  border-width: 0 0 1px 0; /* Only bottom border */
+}
+
+.table tbody {
+  border: 1px solid #F6F6F6;
+}
+
+.table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Column Widths */
+.table .cnpjColumn {
+  width: 15vw;
+}
+
+.table .razaoSocialColumn {
+  width: auto; /* Occupies remaining space */
+}
+
+.table .statusColumn {
+  width: 25vw;
+  padding-left: 5vw;
+}
+
+/* Rounded Corners */
+.table th.cnpjColumn {
+  border-top-left-radius: 16px;
+}
+
+.table th.statusColumn {
+  border-top-right-radius: 16px;
+}
+
+/* Status Cell Styles */
+.table .statusCell {
+  padding: 8px;
+  display: flex;
+  justify-content: space-between; /* Push items to edges */
+  align-items: center;
+  text-align: center;
+}
+
+/* Chevron Icon Styles */
+.chevronIcon {
+  color: #888C9F;
+  cursor: pointer;
+}

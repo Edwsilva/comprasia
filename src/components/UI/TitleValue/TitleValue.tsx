@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./TitleValue.module.css";
+import React from 'react';
+import styles from './TitleValue.module.css';
 
 interface TitleValueProps {
   title: string;
