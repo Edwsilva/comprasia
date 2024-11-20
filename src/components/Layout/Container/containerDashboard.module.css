@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Altura total da janela */
+  /* position: static; */
+  background-color: #007bff;
+}
+@media screen and (max-width: 60rem) {
+  .container {
+    margin: 0 5%;
+  }
+}

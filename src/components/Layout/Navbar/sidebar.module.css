@@ -25,12 +25,15 @@
   font-size: 1rem;
 }
 
-.sidebar li:hover {
-  background-color: hsl(0, 23%, 95%);
-  border-radius: 5px;
+.navItem:hover {
+  background-color: var(--blue-200);
+  color: var(--blue-700);
+
+  border-radius: 8px;
   padding: 0.5rem;
 }
 
-.sidebar li svg {
-  margin-right: 0.625rem;
+.active {
+  color: var(--blue-700);
+  font-weight: bold;
 }

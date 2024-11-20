@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  position: static;
+  /* background-color: #ee5b5b; */
+}
+
+.pesquisaHeader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  font-weight: normal;
+  background-color: transparent;
+}
+.searchRow {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+.searchInput {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  padding: 8px 12px;
+}
+
+.icon {
+  margin-right: 8px;
+  color: #888;
+}
+
+.input {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1; /* Faz o input ocupar todo o espaço */
+}
+
+.select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  background-color: #f1f1f1;
+  color: #555;
+}
+
+.refreshButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--blue-600);
+  padding: 8px;
+  margin-right: 40%;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.refreshButton:hover {
+  transform: rotate(90deg); /* Animação de rotação */
+  color: var(--blue-800);
+}
+
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .searchRow {
+    flex-direction: column; /* Empilha os elementos */
+    align-items: stretch; /* Faz os elementos ocuparem toda a largura */
+    gap: 0.5rem; /* Reduz o espaçamento entre os itens */
+  }
+
+  .searchInput {
+    width: 100%; /* Faz o campo de busca ocupar toda a largura */
+  }
+
+  .select {
+    width: 100%; /* Faz os selects ocuparem toda a largura */
+  }
+
+  .refreshButton {
+    align-self: center; /* Centraliza o botão, opcional */
+  }
+}
