@@ -7,22 +7,23 @@
   background-color: var(--background);
   border-radius: 0 8px 8px 0;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 1.25rem;
+  gap: 5rem;
   z-index: 10;
 }
 
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li {
+.navItem {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
-  cursor: pointer;
-  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  gap: 0.5rem; /* Espaço entre ícone e texto */
+  cursor: pointer; /* Mostra que a linha é clicável */
+  text-decoration: none; /* Remove sublinhado */
+}
+
+.iconContainer {
+  font-size: 1.25rem;
 }
 
 .navItem:hover {
@@ -31,6 +32,7 @@
 
   border-radius: 8px;
   padding: 0.5rem;
+  transform: translateX(8px); /* Move 10px para a direita */
 }
 
 .active {
