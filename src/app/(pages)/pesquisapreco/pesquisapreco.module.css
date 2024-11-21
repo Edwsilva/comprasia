@@ -27,9 +27,19 @@
     display: flex;
     flex-direction: column;
     max-height: 85%;
-
-
 }
+
+.fullHeight {
+  flex: 1; /* Ocupa o espaço restante */
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px; /* Opcional */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Para um efeito de sombra */
+  display: flex;
+  flex-direction: column;
+  max-height: none;
+}
+
 
 .buttonsContainer {
     display: flex;
@@ -63,8 +73,14 @@
     height: 2px;
     background-color: #007bff; /* Linha azul para botão ativo */
   }
+
 .content {
   flex: 1;
   max-height: 100%;
 }
 
+
+.fullContent {
+  flex: 1;
+  max-height: none;
+}

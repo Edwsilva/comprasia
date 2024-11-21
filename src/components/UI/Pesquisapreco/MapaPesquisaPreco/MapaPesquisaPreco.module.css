@@ -1,7 +1,6 @@
 /* Fornecedores Section */
 .mapaSection {
     margin: 16px 0;
-    height: 100%;
   }
   
   /* Header Styles */
@@ -62,6 +61,7 @@
     max-height: 100vh;
     font-size: 1rem;
     font-weight: 500;
+    margin-top: 2vh;
 
   }
   
@@ -124,6 +124,7 @@
 
   .table .actionsColumn {
     width: 5vw;
+    text-align: center;
   }
 
 
@@ -150,3 +151,50 @@
 
   }
   
+
+  /* Resultados da Pesquisa Section */
+
+  .searchResults {
+    margin-top: 4vh;
+  }
+
+  /* Observações Section */
+
+
+   .observacoes {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+  }
+
+  .observacoesHeader {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .novaObservacaoButton {
+    display: flex;
+    background-color: white;
+    color: #236BFE;
+    border: 1px solid #236BFE;
+    padding: 0.5rem 0.8rem;
+    border-radius: 24px;
+    cursor: pointer;
+    align-self: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .novaObservacaoButton:hover {
+    background-color: #f0f0f0;
+  }
+
+
+  .tableObservacoes {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures consistent column widths */
+    max-height: 100vh;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 8vh;
+  }

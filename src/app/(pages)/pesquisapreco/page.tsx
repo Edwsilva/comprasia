@@ -26,7 +26,9 @@ export default function Pesquisa() {
       <div className={styles.pesquisaHeader}>
         Pesquisa de Preços {'>'} Processo X
       </div>
-      <div className={styles.whiteBox}>
+      <div className={`${styles.whiteBox} ${
+      activeSection === 'Mapa de Pesquisa de Preços' ? styles.fullHeight : ''
+      }`}>
         <div className={styles.buttonsContainer}>
           {Object.keys(sections).map((section) => (
             <button
@@ -40,7 +42,9 @@ export default function Pesquisa() {
             </button>
           ))}
         </div>
-        <div className={styles.content}>
+        <div className={`${styles.content} ${
+          activeSection === 'Mapa de Pesquisa de Preços' ? styles.fullContent : ''
+          }`}>
           {sections[activeSection]}
         </div>
       </div>
