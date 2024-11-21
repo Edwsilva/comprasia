@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import styles from "./home.module.css";
+import style from "./home.module.css";
 import TitleValue from "@/components/UI/TitleValue/TitleValue";
 import { FaPlus } from "react-icons/fa";
 import { FaSearch, FaSyncAlt, FaChevronRight } from "react-icons/fa";
@@ -250,7 +250,7 @@ export default function Home() {
 
   return (
     <ContainerHome>
-      <div className={styles.pesquisaHeader}>
+      <div className={style.pesquisaHeader}>
         Pesquisa de Preços
         <CustomButton
           title="Nova Pesquisa"
@@ -263,34 +263,34 @@ export default function Home() {
         />
       </div>
       <ContainerWhiteBox>
-        <div className={styles.searchRow}>
-          <div className={styles.searchInput}>
+        <div className={style.searchRow}>
+          <div className={style.searchInput}>
             <input
               type="text"
               placeholder="Pesquisar"
-              className={styles.input}
+              className={style.input}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <FaSearch className={styles.icon} />
+            <FaSearch className={style.icon} />
           </div>
 
-          <select className={styles.select}>
+          <select className={style.select}>
             <option value="">Processo</option>
             <option value="process1">Processo 1</option>
             <option value="process2">Processo 2</option>
           </select>
 
-          <select className={styles.select}>
+          <select className={style.select}>
             <option value="">Área Demandante</option>
             <option value="area1">Área 1</option>
             <option value="area2">Área 2</option>
           </select>
-          <button className={styles.refreshButton} onClick={handleRefresh}>
+          <button className={style.refreshButton} onClick={handleRefresh}>
             <FaSyncAlt />
           </button>
         </div>
-        <div className={styles.tableContainer}>
+        <div className={style.tableContainer}>
           <ScrollableTable headers={headers} data={filteredData} />
         </div>
       </ContainerWhiteBox>

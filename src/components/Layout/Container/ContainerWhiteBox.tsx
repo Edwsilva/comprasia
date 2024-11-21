@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
-import styles from "./containerWhiteBox.module.css";
+import style from "./containerWhiteBox.module.css";
 
 type Props = {
   children: ReactNode;
 };
 
 const ContainerWhiteBox = ({ children }: Props) => {
-  return <div className={styles.container}>{children}</div>;
+  return <div className={style.container}>{children}</div>;
 };
 
 export default ContainerWhiteBox;

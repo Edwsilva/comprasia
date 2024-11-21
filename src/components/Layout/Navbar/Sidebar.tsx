@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import styles from "./sidebar.module.css";
+import style from "./sidebar.module.css";
 import { AiFillHome, AiFillSetting, AiOutlineLogout } from "react-icons/ai";
 import { TbZoomMoney } from "react-icons/tb";
 import { FaPeopleCarry } from "react-icons/fa";
@@ -18,19 +18,17 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className={styles.sidebar}>
+    <div className={style.sidebar}>
       {menuItems.map(({ href, label, Icon }) => {
         const isActive = pathname === href;
 
         return (
           <Link href={href} key={href}>
-            <nav
-              className={`${styles.navItem} ${isActive ? styles.active : ""}`}
-            >
-              <span className={styles.iconContainer}>
+            <nav className={`${style.navItem} ${isActive ? style.active : ""}`}>
+              <span className={style.iconContainer}>
                 <Icon />
               </span>
-              <span className={styles.text}>{label}</span>
+              <span className={style.text}>{label}</span>
             </nav>
           </Link>
         );
