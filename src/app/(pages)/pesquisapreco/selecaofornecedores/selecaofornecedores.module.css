@@ -1,0 +1,152 @@
+.container {
+align-items: center;
+display: flex;
+flex-direction: column;
+
+}
+
+
+.mainTitle {
+    text-align: center;
+    margin: 1vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.mainTitle h1 {
+    margin-bottom: 1rem;
+}
+
+.mainTitle p {
+    max-width: 60%;
+}
+
+.object {
+    max-width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.addButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* Alinha os itens à direita */
+    gap: 1rem; /* Espaço entre os botões */
+    width: 60%; /* Garante que a div ocupe toda a largura disponível */
+    margin: 1vw;
+}
+
+.button {
+    display: flex;
+    background-color: white;
+    color: #236BFE;
+    border: 1px solid #236BFE;
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    cursor: pointer;
+    align-self: center;
+    gap: 0.5rem;
+    
+}
+
+.button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Table Styles */
+
+.tableContainer {
+    max-height: 80%;
+    overflow-y: auto;  /* Adiciona a barra de rolagem vertical */
+    scrollbar-color: #ccc #f0f0f0; /* Cor do "polegar" e do fundo */
+    scrollbar-width: normal; /* Largura da barra (opções: auto, thin, none) */
+    margin-bottom: 5vh;
+  
+  }
+  
+  .table {
+    border-collapse: collapse;
+    max-height: 100vh;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 2vh;
+
+  }
+  
+  .table th,
+  .table td {
+    padding: 8px;
+    text-align: left;
+    height: 6vh;
+
+  }
+  
+  .table th {
+    background-color: #f4f4f4;
+    text-align: left;
+  }
+  
+  .table td {
+    border: 1px solid #F6F6F6;
+    border-width: 0 0 1px 0; /* Only bottom border */
+  }
+  
+  .table tbody {
+    border: 1px solid #F6F6F6;
+
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  /* Column Widths */
+
+  .table .checkColumn {
+    width: 5vw;
+    text-align: center;
+  }
+  .table .cnpjColumn {
+    width: 15vw;
+    text-align: center;
+  }
+
+  .table .razaoSocialColumn {
+    width: 20vw;
+    text-align: center;
+  }
+
+  .table .emailColumn {
+    width: 20vw;
+    text-align: center;
+  }
+  
+  
+  /* Status Cell Styles */
+  .table .palavraChaveCell {
+    padding: 0.5rem 0.1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    align-self: center; 
+    text-align: center;
+    background-color: #8BB1FF;
+    color: black;
+    width: 5vw;
+
+  }
+
+  .sendEmail {
+    background-color: #236BFE;
+    color: white;
+    padding: 0.8rem 1rem;
+    width: 15vw;
+    border-radius: 24px;
+    border: None;
+  }
+
+.sendEmail:hover {
+    background-color: #1A4FBD;
+}

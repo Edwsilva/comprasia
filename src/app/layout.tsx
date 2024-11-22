@@ -37,9 +37,6 @@ export default function RootLayout({
           </header>
           <Sidebar />
           <main>{children}</main>
-          <footer>
-            <Footer />
-          </footer>
         </Container>
       </body>
     </html>
