@@ -42,19 +42,119 @@ const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
   const renderPagination = () => {
     const pageNumbers = [];
 
-    // Adiciona números de página, incluindo "..." se necessário
-    for (let i = 1; i <= totalPages; i++) {
-      pageNumbers.push(
-        <span
-          key={i}
-          className={`${styles.pageNumber} ${
-            currentPage === i ? styles.activePage : ""
-          }`}
-          onClick={() => goToPage(i)}
-        >
-          {i}
-        </span>
-      );
+    if (totalPages <= 5) {
+      // Se o número de páginas for 5 ou menos, exibe todas as páginas
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(
+          <span
+            key={i}
+            className={`${styles.pageNumber} ${
+              currentPage === i ? styles.activePage : ""
+            }`}
+            onClick={() => goToPage(i)}
+          >
+            {i}
+          </span>
+        );
+      }
+    } else {
+      // Se o número de páginas for maior que 5, exibe as primeiras 5 páginas e a última
+      if (currentPage <= 5) {
+        // Exibe as 5 primeiras páginas
+        for (let i = 1; i <= 5; i++) {
+          pageNumbers.push(
+            <span
+              key={i}
+              className={`${styles.pageNumber} ${
+                currentPage === i ? styles.activePage : ""
+              }`}
+              onClick={() => goToPage(i)}
+            >
+              {i}
+            </span>
+          );
+        }
+        pageNumbers.push(<span key="ellipsis">...</span>);
+        pageNumbers.push(
+          <span
+            key={totalPages}
+            className={`${styles.pageNumber} ${
+              currentPage === totalPages ? styles.activePage : ""
+            }`}
+            onClick={() => goToPage(totalPages)}
+          >
+            {totalPages}
+          </span>
+        );
+      } else if (currentPage > totalPages - 3) {
+        // Exibe as últimas 5 páginas
+        pageNumbers.push(
+          <span
+            key={1}
+            className={`${styles.pageNumber} ${
+              currentPage === 1 ? styles.activePage : ""
+            }`}
+            onClick={() => goToPage(1)}
+          >
+            {1}
+          </span>
+        );
+        pageNumbers.push(<span key="ellipsis">...</span>);
+
+        for (let i = totalPages - 4; i <= totalPages; i++) {
+          pageNumbers.push(
+            <span
+              key={i}
+              className={`${styles.pageNumber} ${
+                currentPage === i ? styles.activePage : ""
+              }`}
+              onClick={() => goToPage(i)}
+            >
+              {i}
+            </span>
+          );
+        }
+      } else {
+        // Se a página estiver no meio, exibe a página atual e as 2 anteriores e 2 seguintes
+        pageNumbers.push(
+          <span
+            key={1}
+            className={`${styles.pageNumber} ${
+              currentPage === 1 ? styles.activePage : ""
+            }`}
+            onClick={() => goToPage(1)}
+          >
+            {1}
+          </span>
+        );
+        pageNumbers.push(<span key="ellipsis">...</span>);
+
+        for (let i = currentPage - 2; i <= currentPage + 2; i++) {
+          pageNumbers.push(
+            <span
+              key={i}
+              className={`${styles.pageNumber} ${
+                currentPage === i ? styles.activePage : ""
+              }`}
+              onClick={() => goToPage(i)}
+            >
+              {i}
+            </span>
+          );
+        }
+        pageNumbers.push(<span key="ellipsis-end">...</span>);
+        pageNumbers.push(
+          <span
+            key={totalPages}
+            className={`${styles.pageNumber} ${
+              currentPage === totalPages ? styles.activePage : ""
+            }`}
+            onClick={() => goToPage(totalPages)}
+          >
+            {totalPages}
+          </span>
+        );
+      }
     }
 
     return pageNumbers;
