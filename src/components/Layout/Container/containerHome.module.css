@@ -10,9 +10,9 @@
   bottom: 0rem;
   right: 0rem;
   background-color: var(--bg-dashboard);
-  /* background-color: aqua; */
-  height: 100%;
-  overflow: auto;
+  /* background-color: rgb(195, 255, 0); */
+  height: calc(100vh - 5rem);
+  /* overflow: auto; */
 }
 
 @media screen and (max-width: 60rem) {

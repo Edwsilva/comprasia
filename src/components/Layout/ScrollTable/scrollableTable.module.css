@@ -1,12 +1,15 @@
 .tableContainer {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   margin-left: 1rem;
-  /* max-height: 25rem; */
-  /* overflow: auto;  */
+  /* max-height: 28rem; */
+  overflow-y: auto;
   border: 1px solid #f6f6f6;
   border-radius: 8px;
-  height: auto; /* Remove qualquer restrição de altura */
+
+  height: calc(100vh - 15rem);
+  /* background-color: #ff00c3; */
 }
 
 .table {
@@ -61,10 +64,14 @@
 
 /* Estilos para a paginação */
 .pagination {
+  position: sticky;
+  bottom: 0; /* Fixa a página na parte inferior */
+  z-index: 10;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-top: 1rem;
+
   font-size: 0.625rem;
 }
 

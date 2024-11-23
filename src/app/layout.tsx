@@ -37,9 +37,9 @@ export default function RootLayout({
           </header>
           <Sidebar />
           <main>{children}</main>
-          <footer>
+          {/* <footer>
             <Footer />
-          </footer>
+          </footer> */}
         </Container>
       </body>
     </html>

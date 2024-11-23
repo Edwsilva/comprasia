@@ -17,7 +17,7 @@ const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
 
   const totalPages = Math.ceil(data.length / rowsPerPage); // Calcula o número total de páginas
   const startIndex = (currentPage - 1) * rowsPerPage;
-  console.log("startIndex ", startIndex);
+
   const endIndex = startIndex + rowsPerPage;
   const currentData = data.slice(startIndex, endIndex); // Dados da página atual
 

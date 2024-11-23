@@ -5,6 +5,7 @@
   width: 13.75rem;
   height: calc(100vh - 5rem);
   background-color: var(--background);
+  /* background-color: brown; */
   border-radius: 0 8px 8px 0;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   padding: 1.25rem;
