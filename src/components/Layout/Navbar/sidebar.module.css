@@ -1,9 +1,9 @@
 .sidebar {
   position: fixed;
-  top: 4rem;
+  top: 3.81rem;
   left: 0;
   width: 13.75rem;
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 4.46rem);
   background-color: var(--background);
   /* background-color: brown; */
   border-radius: 0 8px 8px 0;

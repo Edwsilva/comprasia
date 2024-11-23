@@ -2,7 +2,7 @@
   display: flex;
   margin: 0px;
   flex-direction: column;
-  padding: 0.81rem;
+  padding-top: 2rem;
   padding-left: 1rem;
   padding-right: 1rem;
   top: 0rem;
@@ -11,7 +11,7 @@
   right: 0rem;
   background-color: var(--bg-dashboard);
   /* background-color: rgb(195, 255, 0); */
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 4.46rem);
   /* overflow: auto; */
 }
 
