@@ -3,7 +3,7 @@
   flex-direction: column;
   height: auto;
   position: static;
-  /* background-color: #ee5b5b; */
+  background-color: var(--bg-dashboard);
 }
 
 .pesquisaHeader {
@@ -12,19 +12,20 @@
   flex-wrap: wrap; /* Permite quebra de linha em telas menores */
   justify-content: space-between;
   margin-bottom: 1.25rem;
-  font-weight: normal;
-  background-color: transparent;
+  font-size: 1.5rem;
 }
 .searchRow {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
 .searchInput {
   display: flex;
   align-items: center;
-  background-color: #f1f1f1;
+  background-color: transparent;
   border: 1px solid #ccc;
   border-radius: 2rem;
   padding: 8px 12px;
@@ -46,7 +47,7 @@
   padding: 8px 12px;
   border: 1px solid #ccc;
   border-radius: 1rem;
-  background-color: #f1f1f1;
+  background-color: transparent;
   color: #555;
 }
 
@@ -76,6 +77,8 @@
   flex-direction: column;
   gap: 8px;
   margin-top: 1rem;
+  background-color: transparent;
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {

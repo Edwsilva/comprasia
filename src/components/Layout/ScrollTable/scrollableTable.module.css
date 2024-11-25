@@ -1,47 +1,59 @@
 .tableContainer {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  /* max-height: 25rem; */
-  /* overflow: auto;  */
-  border: 1px solid #ccc;
+  gap: 8px;
+  margin-left: 1rem;
+  flex-grow: 1;
+  max-height: calc(100vh - 15rem);
+  overflow-y: auto;
+  border: 1px solid #f6f6f6;
   border-radius: 8px;
-  overflow: hidden; /* Remove completamente a rolagem */
-  height: auto; /* Remove qualquer restrição de altura */
+  position: relative;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 0.625rem;
+  margin-bottom: 0.5rem;
 }
 
 .table {
   width: 100%;
-  border-collapse: collapse; /* Remove os espaços entre as bordas */
+  border-collapse: collapse;
+  border: 5px solid #f6f6f6;
+  border-width: 0 0 5px 0;
 }
 
 .tableHeader,
 .tableCell {
   padding: 0.5rem 0.75rem;
   text-align: left;
-  border-bottom: 1px solid #ddd;
-  white-space: nowrap; /* Evita quebra de linha no conteúdo */
-}
-
-.centered {
-  text-align: center;
+  height: 6vh;
+  border: 1px solid #f6f6f6;
+  border-width: 0 0 1px 0;
 }
 
 .tableHeader {
   background-color: var(--bg-shadow);
-  position: sticky; /* Mantém o cabeçalho visível ao rolar */
+  position: sticky;
   top: 0;
   z-index: 1;
 }
 
 .tableRow:hover {
-  background-color: #f9f9f9; /* Destaque ao passar o mouse */
+  background-color: #f9f9f9;
 }
+
 .iconCell {
   width: 1.25rem;
   text-align: center;
   vertical-align: middle;
-  border-bottom: 1px solid #ddd;
-  /* background-color: #28a745; */
+  border: 1px solid #f6f6f6;
+  border-width: 0 0 1px 0;
   padding-right: 2rem;
 }
 
@@ -50,63 +62,52 @@
   margin: 0 auto;
 }
 
-/* Estilos para a paginação */
-.pagination {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 1rem;
-  font-size: 0.625rem;
-}
-
 .pagination button {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
   margin: 0 0.5rem;
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
+  background-color: transparent;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .pagination button:disabled {
-  background-color: #ddd;
+  background-color: transparent;
   cursor: not-allowed;
 }
 
 .pageNumber {
-  padding: 0.5rem 0.5rem;
-  cursor: pointer;
-}
-
-.pageNumber:hover {
-  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.625rem;
+  margin: 0 5px;
 }
 
 .activePage {
   font-weight: bold;
   color: var(--background);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 10px;
-  height: 10px;
   background-color: #007bff;
-  border-radius: 5px;
-}
-.navButton {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  margin: 0 10px;
-  color: var(--blue-600);
-  font-weight: bold;
-  gap: 0.625rem;
+  border-radius: 50%;
 }
 
-.navButton:hover {
-  color: #0056b3;
+.navButton {
+  cursor: pointer;
+  background-color: transparent;
+  color: #007bff;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.625rem;
+  line-height: 1;
+  margin: 0;
+  height: auto;
+  transition: background-color 0.3s ease;
 }
-/* Isso não está sem utilidade aqui */
+
 .navButton:disabled {
   cursor: not-allowed;
   opacity: 0.5;
@@ -120,6 +121,7 @@
   border-radius: 24px;
   color: var(--background);
 }
+
 .concluido {
   background-color: var(--status-propostaenviada);
 }

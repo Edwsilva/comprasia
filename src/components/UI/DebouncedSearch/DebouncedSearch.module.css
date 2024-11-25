@@ -1,0 +1,54 @@
+.searchRow {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  /* background-color: aqua; */
+}
+.searchInput input {
+  all: unset; /* Remove estilos padrão do navegador */
+  width: 100%; /* Ajusta a largura para ocupar o espaço disponível */
+  background-color: transparent; /* Torna o fundo transparente */
+  color: inherit; /* Herda a cor do texto */
+  font-size: 1rem; /* Define o tamanho da fonte */
+}
+.searchInput {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  padding: 8px 12px;
+  width: 200px; /* Defina a largura que você deseja */
+  /* background-color: blue; */
+}
+
+.refreshButton {
+  padding: 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.refreshButton:hover {
+  background-color: #0056b3;
+}
+.input {
+  border: none;
+  outline: none;
+  background: red;
+  flex: 1; /* Faz o input ocupar todo o espaço */
+}
+
+.select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  background-color: transparent;
+  color: #555;
+}

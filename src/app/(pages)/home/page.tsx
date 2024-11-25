@@ -1,15 +1,15 @@
 "use client";
-
-import { useState, useEffect } from "react";
-import styles from "./home.module.css";
+import { Toaster, toast } from "sonner";
+import { useState, useEffect, useCallback } from "react";
+import style from "./home.module.css";
 import TitleValue from "@/components/UI/TitleValue/TitleValue";
 import { FaPlus } from "react-icons/fa";
 import { FaSearch, FaSyncAlt, FaChevronRight } from "react-icons/fa";
+import DebouncedSearch from "@/components/UI/DebouncedSearch/DebouncedSearch";
 import CustomButton from "@/components/UI/Button/CustomButton";
 import ContainerWhiteBox from "@/components/Layout/Container/ContainerWhiteBox";
 import ScrollableTable from "@/components/Layout/ScrollTable/ScrollableTable";
-import { useRouter } from 'next/navigation';
-
+import ContainerHome from "@/components/Layout/Container/ContainerHome";
 
 const headers = [
   { label: "Data", key: "data" },
@@ -32,6 +32,78 @@ const data = [
   {
     data: "2024-11-02",
     processo: "5678",
+    area: "DAF",
+    objeto: "Locação de Equipamentos",
+    atascontratos: "Processando",
+    fornecedores: "Concluido",
+  },
+  {
+    data: "2024-11-01",
+    processo: "1234",
+    area: "DAF",
+    objeto: "Contrato de Fibra ótica",
+    atascontratos: "Concluido",
+    fornecedores: "Processando",
+  },
+  {
+    data: "2024-11-02",
+    processo: "5678",
+    area: "DSI",
+    objeto: "Locação de Equipamentos",
+    atascontratos: "Processando",
+    fornecedores: "Concluido",
+  },
+  {
+    data: "2024-11-03",
+    processo: "9123",
+    area: "TIC",
+    objeto: "Desenvolvimento de Software",
+    atascontratos: "Processando",
+    fornecedores: "Concluido",
+  },
+  {
+    data: "2024-11-01",
+    processo: "1234",
+    area: "DAF",
+    objeto: "Contrato de Fibra ótica",
+    atascontratos: "Concluido",
+    fornecedores: "Processando",
+  },
+  {
+    data: "2024-11-02",
+    processo: "5678",
+    area: "DSI",
+    objeto: "Locação de Equipamentos",
+    atascontratos: "Processando",
+    fornecedores: "Concluido",
+  },
+  {
+    data: "2024-11-01",
+    processo: "1234",
+    area: "DAF",
+    objeto: "Contrato de Fibra ótica",
+    atascontratos: "Concluido",
+    fornecedores: "Processando",
+  },
+  {
+    data: "2024-11-02",
+    processo: "5678",
+    area: "DSI",
+    objeto: "Locação de Equipamentos",
+    atascontratos: "Processando",
+    fornecedores: "Concluido",
+  },
+  {
+    data: "2024-11-01",
+    processo: "1234",
+    area: "DAF",
+    objeto: "Contrato de Fibra ótica",
+    atascontratos: "Concluido",
+    fornecedores: "Processando",
+  },
+  {
+    data: "2024-11-02",
+    processo: "5678",
     area: "DSI",
     objeto: "Locação de Equipamentos",
     atascontratos: "Processando",
@@ -94,14 +166,6 @@ const data = [
     fornecedores: "Concluido",
   },
   {
-    data: "2024-11-03",
-    processo: "9123",
-    area: "TIC",
-    objeto: "Desenvolvimento de Software",
-    atascontratos: "Concluido",
-    fornecedores: "Concluido",
-  },
-  {
     data: "2024-11-01",
     processo: "1234",
     area: "DAF",
@@ -139,47 +203,7 @@ const data = [
     area: "TIC",
     objeto: "Desenvolvimento de Software",
     atascontratos: "Processando",
-    fornecedores: "Processando",
-  },
-  {
-    data: "2024-11-01",
-    processo: "1234",
-    area: "DAF",
-    objeto: "Contrato de Fibra ótica",
-    atascontratos: "Concluido",
-    fornecedores: "Processando",
-  },
-  {
-    data: "2024-11-02",
-    processo: "5678",
-    area: "DSI",
-    objeto: "Locação de Equipamentos",
-    atascontratos: "Processando",
     fornecedores: "Concluido",
-  },
-  {
-    data: "2024-11-01",
-    processo: "1234",
-    area: "DAF",
-    objeto: "Contrato de Fibra ótica",
-    atascontratos: "Concluido",
-    fornecedores: "Processando",
-  },
-  {
-    data: "2024-11-02",
-    processo: "5678",
-    area: "DSI",
-    objeto: "Locação de Equipamentos",
-    atascontratos: "Processando",
-    fornecedores: "Concluido",
-  },
-  {
-    data: "2024-11-03",
-    processo: "9123",
-    area: "TIC",
-    objeto: "Desenvolvimento de Software",
-    atascontratos: "Concluido",
-    fornecedores: "Processando",
   },
   {
     data: "2024-11-01",
@@ -200,7 +224,7 @@ const data = [
   {
     data: "2024-11-01",
     processo: "1234",
-    area: "DAF",
+    area: "DSI",
     objeto: "Contrato de Fibra ótica",
     atascontratos: "Concluido",
     fornecedores: "Processando",
@@ -212,55 +236,61 @@ const data = [
     objeto: "Locação de Equipamentos",
     atascontratos: "Processando",
     fornecedores: "Concluido",
-  },
-  {
-    data: "2024-11-03",
-    processo: "9123",
-    area: "TIC",
-    objeto: "Desenvolvimento de Software",
-    atascontratos: "Processando",
-    fornecedores: "Aguardando",
   },
 ];
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
+  const [filteredData, setFilteredData] = useState(data);
+  const [selectedArea, setSelectedArea] = useState("");
+  const [resetSearch, setResetSearch] = useState(false);
+  const [isFiltering, setIsFiltering] = useState(false);
 
-
-  const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
-  
-  const router = useRouter(); 
-
-  const handleUploadRedirection = () => {
-    router.push('/pesquisapreco/uploadtr'); 
-  };
-
-  const filteredData = data.filter((row) =>
-    // row.objeto.toLowerCase().includes(searchTerm.toLowerCase())
-    row.objeto.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
+  const uniqueAreas = Array.from(
+    new Set(filteredData.map((item) => item.area))
   );
 
   useEffect(() => {
-    if (timer) clearTimeout(timer); // Limpa o timeout anterior
+    setIsFiltering(true);
+    // Combina os filtros de setor e termo de busca
+    const filtered = data.filter((row) => {
+      const matchesSearch = searchTerm
+        ? row.objeto.toLowerCase().includes(searchTerm.toLowerCase())
+        : true;
+      const matchesArea = selectedArea ? row.area === selectedArea : true;
 
-    const newTimer = setTimeout(() => {
-      setDebouncedSearchTerm(searchTerm); // Atualiza o estado de pesquisa com o valor atual
-    }, 500);
+      return matchesSearch && matchesArea;
+    });
 
-    setTimer(newTimer); // Atualiza o timer
+    setFilteredData(filtered);
+    setIsFiltering(false);
+  }, [searchTerm, selectedArea]); // Recalcula sempre que o termo ou o setor mudar
 
-    return () => clearTimeout(newTimer);
-  }, [searchTerm]);
+  const handleSearch = useCallback(
+    (searchTerm: string) => {
+      const filtered = data.filter((row) => {
+        const matchesSearch = row.objeto
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
+        const matchesArea = selectedArea ? row.area === selectedArea : true;
+        return matchesSearch && matchesArea;
+      });
+      setFilteredData(filtered);
+    },
+    [selectedArea] // Apenas re-cria a função se `selectedArea` mudar
+  );
 
   const handleRefresh = () => {
-    console.log("Refresh clicado!");
+    setSelectedArea("");
+    setFilteredData(data);
+    setResetSearch(true); // Sinaliza para limpar o campo de busca
+    setTimeout(() => setResetSearch(false), 0); // Reseta o sinalizador após limpar
   };
 
   return (
-    <main className={styles.container}>
-      <div className={styles.pesquisaHeader}>
-        <p>Pesquisa de Preços</p>
+    <ContainerHome>
+      <div className={style.pesquisaHeader}>
+        Pesquisa de Preços
         <CustomButton
           title="Nova Pesquisa"
           icon={FaPlus}
@@ -272,37 +302,43 @@ export default function Home() {
         />
       </div>
       <ContainerWhiteBox>
-        <div className={styles.searchRow}>
-          <div className={styles.searchInput}>
-            <input
-              type="text"
-              placeholder="Pesquisar"
-              className={styles.input}
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <FaSearch className={styles.icon} />
-          </div>
-
-          <select className={styles.select}>
-            <option value="">Processo</option>
-            <option value="process1">Processo 1</option>
-            <option value="process2">Processo 2</option>
-          </select>
-
-          <select className={styles.select}>
-            <option value="">Área Demandante</option>
-            <option value="area1">Área 1</option>
-            <option value="area2">Área 2</option>
-          </select>
-          <button className={styles.refreshButton} onClick={handleRefresh}>
-            <FaSyncAlt />
+        {/* <div>
+          <Toaster />
+          <button onClick={() => toast("My first toast")}>
+            Give me a toast
           </button>
-        </div>
-        <div className={styles.tableContainer}>
-          <ScrollableTable headers={headers} data={filteredData} />
+        </div> */}
+        <DebouncedSearch
+          onSearch={handleSearch}
+          placeholder="Pesquisar por objeto"
+          debounceDelay={500}
+          clearSearch={resetSearch}
+          additionalFilters={
+            <div style={{ display: "flex" }}>
+              <select
+                className={style.select}
+                value={selectedArea}
+                onChange={(e) => setSelectedArea(e.target.value)}
+              >
+                <option value="">Área Demandante</option>
+                {uniqueAreas.map((area, index) => (
+                  <option key={index} value={area}>
+                    {area}
+                  </option>
+                ))}
+              </select>
+              <button className={style.refreshButton} onClick={handleRefresh}>
+                <FaSyncAlt />
+              </button>
+            </div>
+          }
+        />
+        <div>
+          {!isFiltering && (
+            <ScrollableTable headers={headers} data={filteredData} />
+          )}
         </div>
       </ContainerWhiteBox>
-    </main>
+    </ContainerHome>
   );
 }

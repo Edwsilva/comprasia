@@ -1,50 +1,38 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
-import { useRouter } from "next/router";
-import styles from "./sidebar.module.css";
+import { usePathname } from "next/navigation";
+import style from "./sidebar.module.css";
 import { AiFillHome, AiFillSetting, AiOutlineLogout } from "react-icons/ai";
 import { TbZoomMoney } from "react-icons/tb";
 import { FaPeopleCarry } from "react-icons/fa";
 
 const Sidebar = () => {
-  // const router = useRouter();
+  const pathname = usePathname();
 
-  // Função auxiliar para verificar a rota atual
-  // const isActive = (path) => router.pathname === path;
+  const menuItems = [
+    { href: "/", label: "Home", Icon: AiFillHome },
+    { href: "/pesquisapreco", label: "Pesquisa de Preços", Icon: TbZoomMoney },
+    { href: "/fornecedores", label: "Fornecedores", Icon: FaPeopleCarry },
+    { href: "/setup", label: "Ajustes", Icon: AiFillSetting },
+    { href: "/login", label: "Logout", Icon: AiOutlineLogout },
+  ];
 
   return (
-    <div className={styles.sidebar}>
-      <ul>
-        <li>
-          <Link href="/">
-            <AiFillHome /> Home
-          </Link>
-        </li>
-        <li>
-          <Link href="/pesquisapreco">
-            <TbZoomMoney />
-            Pesquisa de Preços
-          </Link>
-        </li>
+    <div className={style.sidebar}>
+      {menuItems.map(({ href, label, Icon }) => {
+        const isActive = pathname === href;
 
-        <li>
-          <Link href="/fornecedores">
-            <FaPeopleCarry />
-            Fornecedores
+        return (
+          <Link href={href} key={href}>
+            <nav className={`${style.navItem} ${isActive ? style.active : ""}`}>
+              <span className={style.iconContainer}>
+                <Icon />
+              </span>
+              <span className={style.text}>{label}</span>
+            </nav>
           </Link>
-        </li>
-        <li>
-          <Link href="/setup">
-            <AiFillSetting /> Ajustes
-          </Link>
-        </li>
-        <li>
-          <Link href="/login">
-            <AiOutlineLogout /> Logout
-          </Link>
-        </li>
-      </ul>
+        );
+      })}
     </div>
   );
 };
