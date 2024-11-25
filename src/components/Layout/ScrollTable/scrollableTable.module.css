@@ -16,6 +16,7 @@
 .pagination {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   margin-top: 1rem;
   font-size: 0.625rem;
   z-index: 1; /* Garante que a paginação fique no topo */
@@ -67,53 +68,51 @@
 }
 
 .pagination button {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
   margin: 0 0.5rem;
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
+  background-color: transparent;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .pagination button:disabled {
-  background-color: #ddd;
+  background-color: transparent;
   cursor: not-allowed;
 }
 
 .pageNumber {
-  padding: 0.5rem 0.5rem;
-  cursor: pointer;
-}
-
-.pageNumber:hover {
-  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1rem; /* Tamanho fixo para consistência */
+  height: 1rem; /* Mesmo valor da largura */
+  font-size: 0.625rem; /* Certifique-se de manter o mesmo tamanho de fonte */
+  margin: 0 5px; /* Espaçamento entre os números */
 }
 
 .activePage {
   font-weight: bold;
   color: var(--background);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 10px;
-  height: 10px;
   background-color: #007bff;
-  border-radius: 5px;
+  border-radius: 50%; /* Para criar o formato circular */
 }
-
 .navButton {
-  display: inline-flex;
-  align-items: center;
   cursor: pointer;
-  /* margin: 0 10px; */
-  color: var(--blue-600);
-  font-weight: bold;
-  /* gap: 0.625rem; */
+  /* padding: 0.5rem 1rem; */
+  background-color: transparent;  /* Retira o fundo */
+  color: #007bff;  /* Cor do texto do botão */
+  border: none;  /* Retira a borda */
+  display: inline-flex;
+  align-items: center;  /* Alinha verticalmente os conteúdos */
+  justify-content: center;
+  text-align: center;
+  font-size: 0.625rem;  /* Tamanho do texto */
+  line-height: 1;  /* Ajusta o alinhamento vertical */
+  margin: 0;  /* Remove qualquer margem externa */
+  height: auto;  /* Permite que o botão ajuste sua altura ao conteúdo */
+  transition: background-color 0.3s ease;
 }
 
-.navButton:hover {
-  /* color: #0056b3; */
-}
 
 .navButton:disabled {
   cursor: not-allowed;

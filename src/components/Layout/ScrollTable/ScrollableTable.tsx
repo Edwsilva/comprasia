@@ -176,29 +176,32 @@ const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
             <th className={styles.tableHeader}>&nbsp;</th>
           </tr>
         </thead>
-        {currentData.map((row, rowIndex) => (
-          <tr key={rowIndex} className={styles.tableRow}>
-            {headers.map((header) => {
-              const value = row[header.key];
-              const statusClass =
-                value === "Concluido"
-                  ? `${styles.status} ${styles.concluido}`
-                  : value === "Processando"
-                  ? `${styles.status} ${styles.processando}`
-                  : ""; // Caso o valor seja outro, sem cor personalizada
+        <tbody>
+          {/* Encapsula as linhas em <tbody> */}
+          {currentData.map((row, rowIndex) => (
+            <tr key={rowIndex} className={styles.tableRow}>
+              {headers.map((header) => {
+                const value = row[header.key];
+                const statusClass =
+                  value === "Concluido"
+                    ? `${styles.status} ${styles.concluido}`
+                    : value === "Processando"
+                    ? `${styles.status} ${styles.processando}`
+                    : ""; // Caso o valor seja outro, sem cor personalizada
 
-              return (
-                <td key={header.key} className={styles.tableCell}>
-                  <span className={statusClass}>{value}</span>
-                </td>
-              );
-            })}
+                return (
+                  <td key={header.key} className={styles.tableCell}>
+                    <span className={statusClass}>{value}</span>
+                  </td>
+                );
+              })}
 
-            <td className={styles.iconCell}>
-              <FaChevronRight className={styles.chevronIcon} />
-            </td>
-          </tr>
-        ))}
+              <td className={styles.iconCell}>
+                <FaChevronRight className={styles.chevronIcon} />
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
       <div className={styles.pagination}>
         <button
