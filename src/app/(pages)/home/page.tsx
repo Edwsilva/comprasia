@@ -8,6 +8,8 @@ import { FaSearch, FaSyncAlt, FaChevronRight } from "react-icons/fa";
 import CustomButton from "@/components/UI/Button/CustomButton";
 import ContainerWhiteBox from "@/components/Layout/Container/ContainerWhiteBox";
 import ScrollableTable from "@/components/Layout/ScrollTable/ScrollableTable";
+import { useRouter } from 'next/navigation';
+
 
 const headers = [
   { label: "Data", key: "data" },
@@ -224,7 +226,15 @@ const data = [
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
+
+
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
+  
+  const router = useRouter(); 
+
+  const handleUploadRedirection = () => {
+    router.push('/pesquisapreco/uploadtr'); 
+  };
 
   const filteredData = data.filter((row) =>
     // row.objeto.toLowerCase().includes(searchTerm.toLowerCase())
@@ -258,7 +268,7 @@ export default function Home() {
           textColor="var(--background)"
           borderRadius="32px"
           size={14}
-          onClick={() => {}}
+          onClick={handleUploadRedirection}
         />
       </div>
       <ContainerWhiteBox>
