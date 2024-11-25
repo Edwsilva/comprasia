@@ -4,13 +4,12 @@
   flex-direction: column;
   gap: 8px;
   margin-left: 1rem;
-  flex-grow: 1; /* O contêiner da tabela ocupa o espaço restante */
-  max-height: calc(100vh - 15rem); /* Ajuste a altura conforme necessário */
-  overflow-y: auto; /* Habilita a rolagem apenas se necessário */
+  flex-grow: 1;
+  max-height: calc(100vh - 15rem);
+  overflow-y: auto;
   border: 1px solid #f6f6f6;
   border-radius: 8px;
-  position: relative; /* Isso é necessário para manter a paginação no fluxo */
-  /* background-color: #0056b3; */
+  position: relative;
 }
 
 .pagination {
@@ -19,18 +18,14 @@
   align-items: center;
   margin-top: 1rem;
   font-size: 0.625rem;
-  z-index: 1; /* Garante que a paginação fique no topo */
-  margin-bottom: 0.5rem; /* Pequeno espaço para não colar na tabela */
-  /* background-color: #007bff; */
+  margin-bottom: 0.5rem;
 }
 
 .table {
-  border-width: 1px 0;
   width: 100%;
   border-collapse: collapse;
   border: 5px solid #f6f6f6;
   border-width: 0 0 5px 0;
-  /* table-layout: fixed; */
 }
 
 .tableHeader,
@@ -44,13 +39,13 @@
 
 .tableHeader {
   background-color: var(--bg-shadow);
-  position: sticky; /* Mantém o cabeçalho visível ao rolar */
+  position: sticky;
   top: 0;
   z-index: 1;
 }
 
 .tableRow:hover {
-  background-color: #f9f9f9; /* Destaque ao passar o mouse */
+  background-color: #f9f9f9;
 }
 
 .iconCell {
@@ -84,40 +79,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1rem; /* Tamanho fixo para consistência */
-  height: 1rem; /* Mesmo valor da largura */
-  font-size: 0.625rem; /* Certifique-se de manter o mesmo tamanho de fonte */
-  margin: 0 5px; /* Espaçamento entre os números */
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.625rem;
+  margin: 0 5px;
 }
 
 .activePage {
   font-weight: bold;
   color: var(--background);
   background-color: #007bff;
-  border-radius: 50%; /* Para criar o formato circular */
-}
-.navButton {
-  cursor: pointer;
-  /* padding: 0.5rem 1rem; */
-  background-color: transparent;  /* Retira o fundo */
-  color: #007bff;  /* Cor do texto do botão */
-  border: none;  /* Retira a borda */
-  display: inline-flex;
-  align-items: center;  /* Alinha verticalmente os conteúdos */
-  justify-content: center;
-  text-align: center;
-  font-size: 0.625rem;  /* Tamanho do texto */
-  line-height: 1;  /* Ajusta o alinhamento vertical */
-  margin: 0;  /* Remove qualquer margem externa */
-  height: auto;  /* Permite que o botão ajuste sua altura ao conteúdo */
-  transition: background-color 0.3s ease;
+  border-radius: 50%;
 }
 
+.navButton {
+  cursor: pointer;
+  background-color: transparent;
+  color: #007bff;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.625rem;
+  line-height: 1;
+  margin: 0;
+  height: auto;
+  transition: background-color 0.3s ease;
+}
 
 .navButton:disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
+
 .status {
   display: block;
   width: 100%;
@@ -126,6 +121,7 @@
   border-radius: 24px;
   color: var(--background);
 }
+
 .concluido {
   background-color: var(--status-propostaenviada);
 }
