@@ -1,0 +1,106 @@
+.container {
+align-items: center;
+display: flex;
+flex-direction: column;
+
+}
+
+.mainTitle {
+    text-align: center;
+    margin: 1vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.mainTitle h1 {
+    margin-bottom: 1rem;
+}
+
+.processo {
+  margin: 1vw;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.areaDemandante {
+  margin: 1vw;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.inputBox {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.selectBox {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.uploadBox {
+  border: 2px dashed #007bff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+.uploadBox:hover {
+  background-color: #f0f8ff;
+}
+
+.fileLabel {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.fileInput {
+  display: none;
+}
+
+.filePreview {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.fileName {
+  font-size: 14px;
+  color: #333;
+}
+
+.highlightText {
+  color: #236bfe; /* Define a cor que você deseja para a parte do texto */
+}
+
+.uploadButton {
+  background-color: #236BFE;
+  color: white;
+  padding: 0.8rem 1rem;
+  width: 15vw;
+  border-radius: 24px;
+  border: None;
+  margin-top: 5vw;
+
+}
+
+.uploadButton:hover {
+    background-color: #1A4FBD;
+}
