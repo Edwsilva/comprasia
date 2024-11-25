@@ -3,6 +3,8 @@ import StatusTag from './StatusTagTipoMapaPesquisa';
 
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { MdOutlineFileDownload } from "react-icons/md";
+import { FiXOctagon } from "react-icons/fi";
+
 
 
 
@@ -14,6 +16,15 @@ interface Fornecedor {
   valorUnitario: number;
   valorTotal: number;
   actions: string;
+}
+
+interface Pesquisas {
+  site: string;
+  observacao: string;
+}
+
+interface Observacoes {
+  observacao: string;
 }
 
 const mockFornecedores: Fornecedor[] = [
@@ -52,6 +63,23 @@ const mockFornecedores: Fornecedor[] = [
       valorUnitario: 10000.0,
       valorTotal: 10000.0,
       actions: "Detalhes",
+    },
+  ];
+
+  const mockPesquisas: Pesquisas[] = [
+    {
+      site: "Portal de Compras Publicas do Governo Federal",
+      observacao: "Não foram encontrados parâmetros para o objeto da presente contratação.",
+    },
+    {
+      site: "Portal de Compras Publicas do Governo Federal 2",
+      observacao: "Não foram encontrados parâmetros para o objeto da presente contratação.",
+    },
+  ];
+
+  const mockObservacoes: Observacoes[] = [
+    {
+      observacao: "Não foram encontrados parâmetros para o objeto da presente contratação.",
     },
   ];
 
@@ -103,14 +131,50 @@ export default function Fornecedores() {
                     <td className={styles.valorUnitarioColumn}>R$ {fornecedores.valorUnitario.toFixed(2)}</td>
                     <td className={styles.valorTotalColumn}>R$ {fornecedores.valorTotal.toFixed(2)}</td>
                     <td className={styles.actionsColumn}>
-                        <a href={fornecedores.actions} target="_blank" rel="noopener noreferrer">
-                        {fornecedores.actions}
-                        </a>   
+                       <FiXOctagon size={24} />
                     </td>
                   </tr>
                 ))}
           </tbody>
         </table>
+      </div>
+
+      <div className={styles.searchResults}>
+        <h3>Resultado da Pesquisas</h3>
+        <div className={styles.tableContainer}>
+          <table className={styles.table}>
+              <tbody>
+                  {mockPesquisas.map((pesquisas) => (
+                    <tr key={pesquisas.site}>
+                      <td className={styles.siteColumn}>{pesquisas.site}</td>
+                      <td className={styles.observacaoColumn}>{pesquisas.observacao}</td>
+                      <td className={styles.actionsColumn}> <FiXOctagon size={24} /> </td>
+                    </tr>
+                  ))}
+              </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className={styles.observacoes}>
+        <div className={styles.observacoesHeader}>
+          <h3>Observações</h3>
+          <button className={styles.novaObservacaoButton}>
+              Nova Observação
+          </button>
+        </div>
+        <div className={styles.tableObservacoes}>
+          <table className={styles.table}>
+              <tbody>
+                  {mockObservacoes.map((observacao) => (
+                    <tr key={observacao.observacao}>
+                      <td className={styles.observacaoColumn}>{observacao.observacao}</td>
+                      <td className={styles.actionsColumn}> <FiXOctagon size={24} /> </td>
+                    </tr>
+                  ))}
+              </tbody>
+          </table>
+        </div>
       </div>
 
     </section>
