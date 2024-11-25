@@ -10,6 +10,7 @@ import CustomButton from "@/components/UI/Button/CustomButton";
 import ContainerWhiteBox from "@/components/Layout/Container/ContainerWhiteBox";
 import ScrollableTable from "@/components/Layout/ScrollTable/ScrollableTable";
 import ContainerHome from "@/components/Layout/Container/ContainerHome";
+import { useRouter } from 'next/navigation';
 
 const headers = [
   { label: "Data", key: "data" },
@@ -285,6 +286,11 @@ export default function Home() {
     setFilteredData(data);
     setResetSearch(true); // Sinaliza para limpar o campo de busca
     setTimeout(() => setResetSearch(false), 0); // Reseta o sinalizador após limpar
+  };
+
+  const router = useRouter(); 
+  const handleUploadRedirection = () => {
+    router.push('/pesquisapreco/uploadtr'); 
   };
 
   return (
