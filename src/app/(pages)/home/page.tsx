@@ -1,5 +1,5 @@
 "use client";
-
+import { Toaster, toast } from "sonner";
 import { useState, useEffect, useCallback } from "react";
 import style from "./home.module.css";
 import TitleValue from "@/components/UI/TitleValue/TitleValue";
@@ -302,6 +302,12 @@ export default function Home() {
         />
       </div>
       <ContainerWhiteBox>
+        {/* <div>
+          <Toaster />
+          <button onClick={() => toast("My first toast")}>
+            Give me a toast
+          </button>
+        </div> */}
         <DebouncedSearch
           onSearch={handleSearch}
           placeholder="Pesquisar por objeto"

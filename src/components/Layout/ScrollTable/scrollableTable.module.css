@@ -2,22 +2,34 @@
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
+  gap: 8px;
   margin-left: 1rem;
-  /* max-height: 28rem; */
-  overflow-y: auto;
+  flex-grow: 1; /* O contêiner da tabela ocupa o espaço restante */
+  max-height: calc(100vh - 15rem); /* Ajuste a altura conforme necessário */
+  overflow-y: auto; /* Habilita a rolagem apenas se necessário */
   border: 1px solid #f6f6f6;
   border-radius: 8px;
+  position: relative; /* Isso é necessário para manter a paginação no fluxo */
+  /* background-color: #0056b3; */
+}
 
-  height: calc(100vh - 15rem);
-  /* background-color: #ff00c3; */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  font-size: 0.625rem;
+  z-index: 1; /* Garante que a paginação fique no topo */
+  margin-bottom: 0.5rem; /* Pequeno espaço para não colar na tabela */
+  /* background-color: #007bff; */
 }
 
 .table {
   border-width: 1px 0;
   width: 100%;
-  border-collapse: collapse; /* Remove os espaços entre as bordas */
+  border-collapse: collapse;
   border: 5px solid #f6f6f6;
   border-width: 0 0 5px 0;
+  /* table-layout: fixed; */
 }
 
 .tableHeader,
@@ -27,52 +39,31 @@
   height: 6vh;
   border: 1px solid #f6f6f6;
   border-width: 0 0 1px 0;
-  /* background-color: #d83bb4; */
 }
 
 .tableHeader {
   background-color: var(--bg-shadow);
-  /* background-color: #007bff; */
   position: sticky; /* Mantém o cabeçalho visível ao rolar */
   top: 0;
   z-index: 1;
-  border: 1px solid #f6f6f6;
-  border-width: 0 0 1px 0;
-}
-.centered {
-  text-align: center;
 }
 
 .tableRow:hover {
   background-color: #f9f9f9; /* Destaque ao passar o mouse */
 }
+
 .iconCell {
   width: 1.25rem;
   text-align: center;
   vertical-align: middle;
-
   border: 1px solid #f6f6f6;
   border-width: 0 0 1px 0;
-  /* background-color: #28a745; */
   padding-right: 2rem;
 }
 
 .chevronIcon {
   font-size: 0.625rem;
   margin: 0 auto;
-}
-
-/* Estilos para a paginação */
-.pagination {
-  position: sticky;
-  bottom: 0; /* Fixa a página na parte inferior */
-  z-index: 10;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 1rem;
-
-  font-size: 0.625rem;
 }
 
 .pagination button {
@@ -109,25 +100,25 @@
   background-color: #007bff;
   border-radius: 5px;
 }
+
 .navButton {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-  margin: 0 10px;
+  /* margin: 0 10px; */
   color: var(--blue-600);
   font-weight: bold;
-  gap: 0.625rem;
+  /* gap: 0.625rem; */
 }
 
 .navButton:hover {
-  color: #0056b3;
+  /* color: #0056b3; */
 }
-/* Isso não está sem utilidade aqui */
+
 .navButton:disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
-
 .status {
   display: block;
   width: 100%;
