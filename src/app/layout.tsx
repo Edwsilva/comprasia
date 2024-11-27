@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
+import { ReduxProvider } from "@/redux/provider";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster, toast } from "sonner";
 import Header from "@/components/Layout/Header/Header";
-import Footer from "@/components/Layout/Footer/Footer";
 import Sidebar from "@/components/Layout/Navbar/Sidebar";
 import Container from "@/components/Layout/Container/Container";
-import style from "./page.module.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,17 +31,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Container>
-          <header>
-            <Header />
-          </header>
-          <Sidebar />
+        <ReduxProvider>
+          <Container>
+            <header>
+              <Header />
+            </header>
+            <Sidebar />
 
-          <main>{children}</main>
-          {/* <footer>
+            <main>{children}</main>
+            {/* <footer>
             <Footer />
           </footer> */}
-        </Container>
+          </Container>
+        </ReduxProvider>
       </body>
     </html>
   );
