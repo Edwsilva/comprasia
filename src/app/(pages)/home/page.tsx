@@ -10,7 +10,6 @@ import CustomButton from "@/components/UI/Button/CustomButton";
 import ContainerWhiteBox from "@/components/Layout/Container/ContainerWhiteBox";
 import ScrollableTable from "@/components/Layout/ScrollTable/ScrollableTable";
 import ContainerHome from "@/components/Layout/Container/ContainerHome";
-import { useRouter } from 'next/navigation';
 
 const headers = [
   { label: "Data", key: "data" },
@@ -288,11 +287,6 @@ export default function Home() {
     setTimeout(() => setResetSearch(false), 0); // Reseta o sinalizador após limpar
   };
 
-  const router = useRouter(); 
-  const handleUploadRedirection = () => {
-    router.push('/pesquisapreco/uploadtr'); 
-  };
-
   return (
     <ContainerHome>
       <div className={style.pesquisaHeader}>
@@ -304,16 +298,16 @@ export default function Home() {
           textColor="var(--background)"
           borderRadius="32px"
           size={14}
-          onClick={handleUploadRedirection}
+          onClick={() => {}}
         />
       </div>
-      <ContainerWhiteBox>
-        {/* <div>
+      {/* <div>
           <Toaster />
           <button onClick={() => toast("My first toast")}>
             Give me a toast
           </button>
         </div> */}
+      <ContainerWhiteBox>
         <DebouncedSearch
           onSearch={handleSearch}
           placeholder="Pesquisar por objeto"

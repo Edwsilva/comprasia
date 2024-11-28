@@ -1,3 +1,9 @@
+"use client";
+import { useEffect, useState } from "react";
+import { initialize, keycloak } from "@/config/keycloak";
+import { AppDispatch, useAppSelector } from "@/redux/store";
+import { userInfoActions } from "@/redux/features/user-info";
+import { useDispatch } from "react-redux";
 import styles from "./header.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,6 +12,27 @@ import { IoIosArrowDown } from "react-icons/io";
 import { RxAvatar } from "react-icons/rx";
 
 const Header = () => {
+  const userInfo = useAppSelector((state) => state.userInfo);
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    initialize().then(() => {
+      if (!keycloak.authenticated && userInfo.logged === "not-logged") {
+        dispatch(userInfoActions.setLogged("logging"));
+        keycloak.login();
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (!keycloak.authenticated && userInfo.logged === "logging") {
+        dispatch(userInfoActions.setLogged("logging"));
+        keycloak.login();
+      }
+    }, 1000);
+    return () => clearInterval(timeoutId);
+  }, []);
   return (
     <header className={styles.header}>
       <div className={styles.iconContainer}>
