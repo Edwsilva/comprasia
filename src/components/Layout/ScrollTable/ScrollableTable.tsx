@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { FaChevronRight } from "react-icons/fa";
 import styles from "./scrollableTable.module.css";
 interface Header {
   label: string;
@@ -8,10 +8,11 @@ interface Header {
 
 interface TableProps {
   headers: Header[];
-  data: Record<string, any>[]; // Array de objetos representando as linhas
+  data: Record<string, string>[]; // Array de objetos representando as linhas
 }
 const ScrollableTable: React.FC<TableProps> = ({ headers, data }) => {
   const [currentPage, setCurrentPage] = useState(1);
+
   const rowsPerPage = 10; // Defina quantas linhas deseja mostrar por página
 
   const totalPages = Math.ceil(data.length / rowsPerPage);

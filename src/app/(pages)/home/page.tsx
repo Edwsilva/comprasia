@@ -1,16 +1,16 @@
 "use client";
-import { Toaster, toast } from "sonner";
+
 import { useState, useEffect, useCallback } from "react";
 import style from "./home.module.css";
-import TitleValue from "@/components/UI/TitleValue/TitleValue";
+
 import { FaPlus } from "react-icons/fa";
-import { FaSearch, FaSyncAlt, FaChevronRight } from "react-icons/fa";
+import { FaSyncAlt } from "react-icons/fa";
 import DebouncedSearch from "@/components/UI/DebouncedSearch/DebouncedSearch";
 import CustomButton from "@/components/UI/Button/CustomButton";
 import ContainerWhiteBox from "@/components/Layout/Container/ContainerWhiteBox";
 import ScrollableTable from "@/components/Layout/ScrollTable/ScrollableTable";
 import ContainerHome from "@/components/Layout/Container/ContainerHome";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 const headers = [
   { label: "Data", key: "data" },
@@ -241,7 +241,7 @@ const data = [
 ];
 
 export default function Home() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm] = useState("");
   const [filteredData, setFilteredData] = useState(data);
   const [selectedArea, setSelectedArea] = useState("");
   const [resetSearch, setResetSearch] = useState(false);
@@ -288,9 +288,9 @@ export default function Home() {
     setTimeout(() => setResetSearch(false), 0); // Reseta o sinalizador após limpar
   };
 
-  const router = useRouter(); 
+  const router = useRouter();
   const handleUploadRedirection = () => {
-    router.push('/pesquisapreco/uploadtr'); 
+    router.push("/pesquisapreco/uploadtr");
   };
 
   return (
